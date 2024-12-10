@@ -7,6 +7,7 @@
   <a href="https://www.linkedin.com/in/alify-silva" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 </div>
 
+
 Sistemas que uso!
 <div style="display:flex;">
   <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white">
