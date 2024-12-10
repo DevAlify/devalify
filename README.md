@@ -1,4 +1,4 @@
-## Olá, eu sou o Alify!
+## Oi, eu sou o Alify!
 
 - 👀 Interessado em contribuir em pequenos ou grandes projetos.
 - 📫 Contato: alify.alves@hotmail.com
