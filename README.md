@@ -1,7 +1,7 @@
 ## Olá, eu sou o Alify!
 
 - 👀 Interessado em contribuir em pequenos ou grandes projetos.
-- 📫 Contato: alify.alves@outlook.com
+- 📫 Contato: alify.alves@hotmail.com
 
 <div>
   <a href="https://www.linkedin.com/in/alify-silva" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
