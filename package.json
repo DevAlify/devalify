@@ -1,0 +1,25 @@
+{
+    "name": "portfolio",
+    "version": "1.0.0",
+    "description": "- 👀 Interessado em contribuir em pequenos ou grandes projetos.\r - 📫 Contato: alify.silva@outlook.com",
+    "main": "index.js",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DevAlify/portfolio.git"
+    },
+    "keywords": [],
+    "author": "Alify Silva",
+    "license": "ISC",
+    "devDependencies": {
+        
+    },
+    "dependencies": {
+        "typed.js": "^2.1.0"
+    }
+}

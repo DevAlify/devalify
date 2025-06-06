@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Portfólio de desenvolvedor web" />
+        <meta name="author" content="Alify Silva" />
+        <meta name="keywords" content="HTML, CSS, JavaScript, Tailwind CSS" />
+
+        <title>Portfólio - Alify Silva</title>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+            defer
+        ></script>
+        <script
+            src="https://kit.fontawesome.com/209fbf64d6.js"
+            crossorigin="anonymous"
+            defer
+        ></script>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+        <link rel="stylesheet" href="/src/input.css" />
+    </head>
+    <body class="h-auto w-auto bg-[#1A1B1E] text-white overflow-x-hidden">
+        <header
+            class="fixed flex justify-center items-center w-screen h-[80px] top-0 left-0  z-[100] bg-[#1A1B1E]"
+        >
+            <div class="flex justify-between items-center h-[100%] w-[1400px]">
+                <div
+                class="logo text-4xl text-white font-bold pointer p-0 m-0 transition ease-in-out duration-300 hover:scale-103 pointer"
+                >
+                    <a href="#" class="logo">Alify</a>
+                </div>
+
+                <nav class="">
+                    <ul class="flex">
+                        <li>
+                            <a
+                                class="text-lg text-white font-medium transition ease-in-out duration-200 border-b-2 border-transparent hover:text-[#ed8761] hover:border-[#ed8761] active:text-white active:border-[#ed8761] clicked:text-[#ed8761] clicked:border-[#ed8761]"
+                                href="#services"
+                                >Serviços</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="text-lg text-white ml-10 font-medium transition ease-in-out duration-200 border-b-2 border-transparent hover:text-[#ed8761] hover:border-[#ed8761] active:text-white active:border-[#ed8761] clicked:text-[#ed8761] clicked:border-[#ed8761]""
+                                href="#skills"
+                                >Stacks</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="text-lg text-white ml-10 font-medium transition ease-in-out duration-200 border-b-2 border-transparent hover:text-[#ed8761] hover:border-[#ed8761] active:text-white active:border-[#ed8761] clicked:text-[#ed8761] clicked:border-[#ed8761]""
+                                href="#education"
+                                >Formação</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="text-lg text-white ml-10 font-medium transition ease-in-out duration-200 border-b-2 border-transparent hover:text-[#ed8761] hover:border-[#ed8761] active:text-white active:border-[#ed8761] clicked:text-[#ed8761] clicked:border-[#ed8761]""
+                                href="#experience"
+                                >Experiência</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="text-lg text-white ml-10 font-medium transition ease-in-out duration-200 border-b-2 border-transparent hover:text-[#ed8761] hover:border-[#ed8761] active:text-white active:border-[#ed8761] clicked:text-[#ed8761] clicked:border-[#ed8761]""
+                                href="#projects"
+                                >Projetos</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="text-lg text-white ml-10 font-medium transition ease-in-out duration-200 border-b-2 border-transparent hover:text-[#ed8761] hover:border-[#ed8761] active:text-white active:border-[#ed8761] clicked:text-[#ed8761] clicked:border-[#ed8761]""
+                                href="#contact"
+                                >Contato</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+            
+        </header>
+        <main>
+            <section
+                class="flex justify-center items-center gap-[8rem] bg-[#1A1B1E] min-h-screen w-screen"
+            >
+                <div
+                    class="container flex justify-between items-center w-[1400px] relative right-0 gap-[15rem]"
+                >
+                    <!-- flex-col md:flex-row md:gap-[2rem] lg:gap-[4rem] xl:gap-[8rem] 2xl:gap-[10rem] px-4 md:px-0 -->
+                    <img
+                        src="/src/images/alify-silva.png"
+                        alt="Alify Silva"
+                        class="relative w-[480px] rounded-full [box-shadow:0_0_25px_black] cursor-pointer transition-all duration-200 ease-in hover:[font-size:1.8rem] hover:font-medium"
+                    />
+                    <div class="">
+                        <h1 class="text-[3rem] font-bold leading-[1.3]">
+                            Olá, eu sou o
+                            <span class="text-[#ed8761]">Alify</span>!
+                        </h1>
+                        <div class="typing-text">
+                            <h3 class="text-[2rem] mb-4 font-bold">
+                                Sou&nbsp;<span
+                                    id=""
+                                    class="auto-type text-[#ed8761]"
+                                ></span>
+                            </h3>
+                        </div>
+                        <p class="text-[1.1rem] font-medium mb-6">
+                            Tenho 23 anos e trabalho com T.I desde os meus 15
+                            anos. Atuei com Redes e Infraestutura em ambiente
+                            industrial, mas hoje meu foco é na área de
+                            Desenvolvimento / Engenharia de Software para
+                            atender diversos clientes para diversas
+                            necessidades.
+                        </p>
+                        <div class="social-icons text-[3rem] pl-0 ml-0">
+                            <a
+                                class="my-[2rem] ml-0 mr-[1.2rem]"
+                                href="https://www.linkedin.com/in/alify-silva/"
+                            >
+                                <i
+                                    id="linkedin-icon"
+                                    class="fa-brands fa-linkedin transition ease-in-out duration-200 hover:"
+                                ></i>
+                            </a>
+                            <a
+                                class="my-[2rem] mx-[1.2rem]"
+                                href="https://github.com/DevAlify"
+                            >
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                        <a
+                            href="https://api.whatsapp.com/send?phone=11973397668&text=Olá%20Alify!%20Vamos%20conversar"
+                            class="inline-flex items-center justify-center w-auto h-augo bg-[#25D366] font-bold rounded-full mx-5 ml-0 px-4 py-2 my-8 transition-transform duration-300 ease-in-out hover: hover:scale-[1.030]"
+                        >
+                            <div class="flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp text-4xl"></i>
+                                <div class="ml-2">
+                                    Enviar uma mensagem via WhatsApp
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about"></section>
+        </main>
+        <div class="h-[100px] bg-[#ffffff] w-screen">
+            <p class="text-center text-[#1A1B1E] text-[1.2rem] font-bold pt-4 pb-4">
+                Me envie uma mensagem no meu e-mail
+            </p>
+        </div>
+        <footer class="h-[500px] bg-[#26272C] w-screen">
+            <div
+                class="w-screen flex justify-center b-0 text-white text-2xl font-bold py-9"
+            >
+                © 2025 Alify Silva. Todos os direitos reservados.
+            </div>
+        </footer>
+
+        <script>
+            var typed = new Typed(".auto-type", {
+                strings: [
+                    "Desenvolvedor Web",
+                    "Desenvolvedor Full Stack",
+                    "Desenvolvedor Java",
+                    "Engenheiro de Software",
+                ],
+                typeSpeed: 50,
+                backSpeed: 50,
+                loop: true,
+            });
+        </script>
+    </body>
+</html>
