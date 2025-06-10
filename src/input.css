@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 
 ::-webkit-scrollbar {
     width: 0.7rem; /* Aumenta a largura para scrollbar vertical (ex: 15px) */
@@ -35,30 +36,30 @@
     transition: ease-in-out 1.2s; /* Transição suave para a alça */
 }
 
+::selection {
+  background-color: #fafafa; /* bg-yellow-400 */
+  color: black; /* cor do texto selecionado */
+}
+
 
 header {
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 600;
 }
 
 section {
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     min-height: 100vh;
 }
 
-.social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
+.social-icons a {   
     background-color: transparent;
     border-radius: 50%;
-    transition: 0.3s ease-in-out;
+    transition: 0.3s ease;
 }
 
 .social-icons a:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
 }
 
 .typing-text {
