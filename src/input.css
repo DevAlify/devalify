@@ -35,7 +35,7 @@
     transition: ease-in-out 1.2s; /* Transição suave para a alça */
 }
 
-header {
+/* header {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
 }
@@ -43,7 +43,7 @@ header {
 section {
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
-}
+} */
 
 .social-icons a {
     display: inline-flex;
