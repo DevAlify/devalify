@@ -23,20 +23,20 @@
             src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"
         ></script>
         <script src="https://unpkg.com/scrollreveal"></script>
-        <script src="src/script.js"></script>
+        <script defer src="src/script.js"></script>
 
         <link rel="stylesheet" href="src/input.css" />
     </head>
     <body class="h-auto w-auto bg-[#1A1B1E] text-[#d0daff] overflow-x-hidden">
         <header
             id="header-bar"
-            class="absolute flex justify-center items-center w-screen h-[60px] top-0 left-0  z-[100] bg-[#1A1B1E]"
+            class="fixed flex justify-center items-center w-screen h-[40px] top-0 left-0 bg-[#1A1B1E] z-[100] "
         >
-            <div class="flex justify-between items-center h-[100%] w-[85%] bg-[#1A1B1E]">
+            <div class="flex justify-between items-center h-[100%] w-[85%] ">
                 <div
-                class="logo text-3xl text-white font-bold pointer p-0 m-0 transition ease-in-out duration-300 hover:scale-103 pointer"
+                class="logo text-2xl text-white font-bold pointer p-0 m-0 transition ease-in-out duration-300 hover:scale-103 pointer"
                 >
-                    <a href="#" class="logo">Alify</a>
+                    <a href="#" class="logo text-[#d0daff]">Alify</a>
                 </div>
 
                 <nav class="navbar">
@@ -44,21 +44,21 @@
                         
                         <li>
                             <a
-                                class="text-lg text-white font-medium transition ease-in-out duration-200 border-b-2 border-transparent hover:text-[#FF0055] hover:border-[#FF0055] active:text-white active:border-[#FF0055] clicked:text-[#FF0055] clicked:border-[#FF0055]""
+                                class="text-lg text-[#d0daff] font-medium transition ease-in-out duration-200 border-b-2 border-transparent hover:text-[#FF0055] hover:border-[#FF0055] active:text-white active:border-[#FF0055] clicked:text-[#FF0055] clicked:border-[#FF0055]""
                                 href="#skills"
                                 >Início</a
                             >
                         </li>
                         <li>
                             <a
-                                class="text-lg text-white font-medium transition ease-in-out duration-200 border-b-2 border-transparent hover:text-[#FF0055] hover:border-[#FF0055] active:text-white active:border-[#FF0055] clicked:text-[#FF0055] clicked:border-[#FF0055]""
+                                class="text-lg text-[#d0daff] font-medium transition ease-in-out duration-200 border-b-2 border-transparent hover:text-[#FF0055] hover:border-[#FF0055] active:text-white active:border-[#FF0055] clicked:text-[#FF0055] clicked:border-[#FF0055]""
                                 href="#experience"
                                 >Sobre</a
                             >
                         </li>
                         <li>
                             <a
-                                class="text-lg text-white font-medium transition ease-in-out duration-200 border-b-2 border-transparent hover:text-[#FF0055] hover:border-[#FF0055] active:text-white active:border-[#FF0055] clicked:text-[#FF0055] clicked:border-[#FF0055]""
+                                class="text-lg text-[#d0daff] font-medium transition ease-in-out duration-200 border-b-2 border-transparent hover:text-[#FF0055] hover:border-[#FF0055] active:text-white active:border-[#FF0055] clicked:text-[#FF0055] clicked:border-[#FF0055]""
                                 href="#footer-page"
                                 >Contato</a
                             >
@@ -71,76 +71,85 @@
         <main>
             <section
                 id="home"
-                class="flex justify-center items-center gap-[8rem] bg-[#1A1B1E] min-h-screen w-screen"
+                class="flex justify-center items-center gap-[8rem] bg-[#1A1B1E] min-h-[850px] min-w-screen"
             >
+            <!-- Container Section 1 Main -->
                 <div
-                    class="container flex justify-between items-center w-[1400px] relative right-0 gap-[15rem]"
+                    class="container flex justify-center items-center w-[100vw] min-h-auto relative right-0 gap-[15rem]"
                 >
-                    <!-- flex-col md:flex-row md:gap-[2rem] lg:gap-[4rem] xl:gap-[8rem] 2xl:gap-[10rem] px-4 md:px-0 -->
-                    <div id="profile-img">
+                    <!-- Section Profile Text -->
+                    <div 
+                        id="profile-text" 
+                        class="relative min-w-[700px] max-w-[850px] h-auto"
+                        >
+                            <h1 class="text-[3rem] font-bold leading-[1.3]">
+                                Olá, eu sou o
+                                <span class="text-[#FF0055]">Alify</span>!
+                            </h1>
+                            <div class="typing-text">
+                                <h3 class="text-[2rem] mb-4 font-bold">
+                                    Sou&nbsp;<span
+                                        id=""
+                                        class="auto-type text-[#FF0055]"
+                                    ></span>
+                                </h3>
+                            </div>
+                            <p class="text-[1.2rem] font-medium mb-6">
+                                Tenho 23 anos e trabalho com T.I desde os meus 15
+                                anos. Atuei com Redes e Infraestutura em ambiente
+                                industrial, mas hoje meu foco é na área de
+                                Desenvolvimento / Engenharia de Software para
+                                atender diversos clientes para diversas
+                                necessidades.
+                            </p>
+                            <div class="flex justify-center items-center text-[3rem] w-[100%] gap-[4rem]">
+                                <a
+                                    
+                                    class="my-2 hover:text-[#0A66C2] inline-block"
+                                    href="https://www.linkedin.com/in/alify-silva/"
+                                >
+                                    <i class="fa-brands fa-linkedin h-6 h-6 transition ease-in-out duration-200"></i>
+                                </a>
+                                <a
+                                    id="github-icon"
+                                    class="my-2 hover:text-[#f6f8fa] inline-block"
+                                    href="https://github.com/DevAlify"
+                                >
+                                    <i class="fa-brands fa-github h-6 h-6 transition ease-in-out duration-200"></i>
+                                </a>
 
+                                <a
+                                href="https://api.whatsapp.com/send?phone=11973397668&text=Olá%20Alify!%20Vamos%20conversar"
+                                class="my-2 hover:text-[#25D366] inline-block"
+                                >
+                                    <i class="fa-brands fa-whatsapp h-6 h-6 transition ease-in-out duration-200"></i>
+                                </a>
+                            </div>
+                        
+                    </div>
+
+                    <!-- Section Profile Image -->
+                    <div id="profile-img" class="relative min-w-[800px] p-0 flex justify-center items-center">
                         <img
-                            src="src/images/alify-silva.png"
+                            src="src/images/IP16-LkdIn.png"
+                            id="ip-linkedin"
                             alt="Alify Silva"
-                            class="relative rounded-full [box-shadow:0_0_25px_black] cursor-pointer transition-all duration-200 ease-in hover:[font-size:1.8rem] hover:font-medium"
+                            class="absolute w-180 "
+                        />
+                        <img
+                            src="src/images/IP16-GIT.png"
+                            id="ip-github"
+                            alt="Alify Silva"
+                            class="absolute w-120 "
                         />
                     </div>
-                    <div class="main-container">
-                        <h1 class="text-[3rem] font-bold leading-[1.3]">
-                            Olá, eu sou o
-                            <span class="text-[#FF0055]">Alify</span>!
-                        </h1>
-                        <div class="typing-text">
-                            <h3 class="text-[2rem] mb-4 font-bold">
-                                Sou&nbsp;<span
-                                    id=""
-                                    class="auto-type text-[#FF0055]"
-                                ></span>
-                            </h3>
-                        </div>
-                        <p class="text-[1.2rem] font-medium mb-6">
-                            Tenho 23 anos e trabalho com T.I desde os meus 15
-                            anos. Atuei com Redes e Infraestutura em ambiente
-                            industrial, mas hoje meu foco é na área de
-                            Desenvolvimento / Engenharia de Software para
-                            atender diversos clientes para diversas
-                            necessidades.
-                        </p>
-                        <div class="flex-start justify-center items-center text-[3rem] w-[auto] pl-0 ml-0">
-                            <a
-                                id="linkedin-icon"
-                                class="my-2 ml-0 mr-[1.2rem] hover:text-[#0A66C2]"
-                                href="https://www.linkedin.com/in/alify-silva/"
-                            >
-                                <i
-                                    id="linkedin-icon"
-                                    class="fa-brands fa-linkedin w-6 h-6 transition ease-in-out duration-200 hover:"
-                                ></i>
-                            </a>
-                            <a
-                                id="github-icon"
-                                class="my-2 mx-[1.2rem] hover:text-[#f6f8fa]"
-                                href="https://github.com/DevAlify"
-                            >
-                                <i class="fa-brands fa-github h-6 h-6"></i>
-                            </a>
-                        </div>
-                        <a
-                            href="https://api.whatsapp.com/send?phone=11973397668&text=Olá%20Alify!%20Vamos%20conversar"
-                            class="inline-flex items-center justify-center w-auto h-augo bg-[#25D366] font-bold rounded-full mx-5 ml-0 px-4 py-2 my-8 transition-transform duration-300 ease-in-out hover: hover:scale-[1.030]"
-                        >
-                            <div class="flex items-center justify-center">
-                                <i class="fa-brands fa-whatsapp text-4xl"></i>
-                                <div class="ml-2">
-                                    Enviar uma mensagem via WhatsApp
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                    
                 </div>
             </section>
+            <div class="min-w-screen h-[8px] bg-[#ffffff]"></div>
 
-            <section id="about" class="skills">
+            <!-- Section About -->
+            <section id="about" class="skills flex justify-center items-center gap-[8rem] bg-[#1A1B1E] min-h-screen min-w-screen">
                 <div class="flex justify-center items-center w-screen h-[100%]">
                     <div class="w-[1400px] bg-gray-400 h-[300px] rounded-lg shadow-lg p-8">
                         <h2 class="text-4xl font-bold mb-6">Sobre Mim</h2>
@@ -170,6 +179,13 @@
         </footer>
 
         <script defer>
+            
+            // Scroll Home
+           
+            
+            // <--- Animate Main Section --->
+            
+
             var typed = new Typed(".auto-type", {
                 strings: [
                     "Desenvolvedor Web",
@@ -181,35 +197,6 @@
                 backSpeed: 50,
                 loop: true,
             });
-
-            // Scroll Home
-            ScrollReveal({
-                distance: '60px',
-                duration: 2500,
-                delay: 400
-            })
-
-            // <--- Animate Main Section --->
-            
-            // Animate Section Home
-            ScrollReveal().reveal('#profile-img', {
-                delay: 100, origin: 'left', reset: false
-            });
-
-            ScrollReveal().reveal('.main-container', {
-                delay: 200, origin: 'right', reset: false
-            });
-
-
-
-
-            // Animate Section Skills
-            ScrollReveal().reveal('.skills', {
-                delay: 200, origin: 'left', reset: true
-            });
-
-
-
         </script>
     </body>
 </html>

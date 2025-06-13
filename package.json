@@ -16,10 +16,8 @@
     "keywords": [],
     "author": "Alify Silva",
     "license": "ISC",
-    "devDependencies": {
-        
-    },
     "dependencies": {
+        "scrollreveal": "^4.0.9",
         "typed.js": "^2.1.0"
     }
 }

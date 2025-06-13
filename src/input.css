@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-
-
 ::-webkit-scrollbar {
     width: 0.7rem; /* Aumenta a largura para scrollbar vertical (ex: 15px) */
     height: 0.3rem; /* Aumenta a altura para scrollbar horizontal (se houver) */
@@ -49,7 +47,6 @@ header {
 
 section {
     font-family: "Inter", sans-serif;
-    min-height: 100vh;
 }
 
 .social-icons a {   
@@ -58,9 +55,7 @@ section {
     transition: 0.3s ease;
 }
 
-.social-icons a:hover {
-    transform: scale(1.1);
-}
+
 
 .typing-text {
     width: 100%;
@@ -69,4 +64,21 @@ section {
 
 .typing-text h3 span {
     font-family: "Fira Code", monospace;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+#ip-linkedin {
+  animation: float 3s ease-in-out infinite;
+}
+
+#ip-github {
+  animation: float 3.5s ease-in-out infinite;
 }
