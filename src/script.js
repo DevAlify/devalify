@@ -20,5 +20,5 @@ ScrollReveal().reveal('#ip-linkedin', {
     origin: 'left', delay: 200, reset: false
 });
 ScrollReveal().reveal('#ip-github', {
-    origin: 'right', delay: 300, reset: false
+    origin: 'right', delay: 200, reset: false
 })
