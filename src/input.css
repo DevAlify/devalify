@@ -7,36 +7,30 @@
 
 /* 2. Fundo do Scrollbar (trilha) */
 ::-webkit-scrollbar-track {
-    background: rgba(
-        255,
-        255,
-        255,
-        0
-    ); /* Cor de fundo da trilha do scrollbar */
-    border-radius: 10px; /* Bordas arredondadas para a trilha */
+    background: rgba(26, 27, 30, 0.7); /* Cor de fundo da trilha do scrollbar */
 }
 
 /* 3. A Alça do Scrollbar (thumb) */
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3); /* Cor da alça do scrollbar */
-    border-radius: 4px; /* Bordas arredondadas para a alça */
+    background: #202124; /* Cor da alça do scrollbar */
+    border-radius: 16px; /* Bordas arredondadas para a alça */
     transition: ease-in-out 1.2s; /* Transição suave para a alça */
 }
 
 /* 4. Estado :hover da Alça do Scrollbar */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.8); /* Cor da alça ao passar o mouse */
+    background: #353638; /* Cor da alça ao passar o mouse */
     transition: ease-in-out 1.2s; /* Transição suave para a alça */
 }
 
 ::-webkit-scrollbar-thumb:active {
-    background: rgba(255, 255, 255, 1); /* Cor da alça ao clicar */
+    background: #1a1b1e; /* Cor da alça ao clicar */
     transition: ease-in-out 1.2s; /* Transição suave para a alça */
 }
 
 ::selection {
-    background-color: #fafafa; /* bg-yellow-400 */
-    color: black; /* cor do texto selecionado */
+    background-color: #f5f5f5; /* bg-yellow-400 */
+    color: #212220; /* cor do texto selecionado */
 }
 
 header {
@@ -79,4 +73,14 @@ section {
 
 #ip-github {
     animation: float 3.4s ease-in-out infinite;
+}
+@media screen and (max-width: 300px) and (min-width: 200px) {
+    #ip-linkedin {
+        width: 100%;
+        height: auto;
+    }
+    #ip-github {
+        width: 100%;
+        height: auto;
+    }
 }

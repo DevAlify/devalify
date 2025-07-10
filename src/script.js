@@ -12,9 +12,6 @@ ScrollReveal().reveal('#profile-text', {
 });
 
 // Animate Section Skills
-ScrollReveal().reveal('.skills', {
-    origin: 'bottom', reset: true
-});
 
 ScrollReveal().reveal('#ip-linkedin', {
     origin: 'left', delay: 200, reset: false
