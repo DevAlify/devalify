@@ -1,23 +1,15 @@
 {
-    "name": "portfolio",
-    "version": "1.0.0",
-    "description": "- 👀 Interessado em contribuir em pequenos ou grandes projetos.\r - 📫 Contato: alify.silva@outlook.com",
-    "main": "index.js",
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "preview": "vite preview"
-    },
-    "type": "module",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/DevAlify/portfolio.git"
-    },
-    "keywords": [],
-    "author": "Alify Silva",
-    "license": "ISC",
-    "dependencies": {
-        "scrollreveal": "^4.0.9",
-        "typed.js": "^2.1.0"
-    }
+  "name": "alify-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Personal engineering portfolio for Alify Silva",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "check": "node --check src/portfolio.js",
+    "build": "node scripts/build.mjs"
+  },
+  "author": "Alify Silva"
 }

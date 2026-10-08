@@ -1,22 +1,49 @@
-<h1 align="center">Hi 👋, I'm Alify</h1>
-<h3 align="center">I'm a Software Engineer, Junior Full Stack Developer</h3>
+# Alify Silva
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=devalify&label=Profile%20views&color=0e75b6&style=flat" alt="devalify" /> </p>
+**Software Engineer · Backend & Full Stack · Applied AI**
 
-- 🌱 I’m currently learning **Spring**
+I build APIs, integrations and web applications with TypeScript, Node.js, Java, React and SQL. My background combines software development with production incident investigation and IT operations. Based in São Paulo, Brazil, and open to mid-level software engineering roles. English: B2, with technical communication.
 
-- 👯 I’m looking to collaborate on **back-end development**
+[LinkedIn](https://www.linkedin.com/in/alify-silva/) · [Engineering portfolio](https://github.com/DevAlify/Projetos) · [Personal website](https://devalify.github.io/devalify/) · [Email](mailto:alify.alves@hotmail.com)
 
-- 👨‍💻 All of my projects are available at [https://devalify.github.io/devalify/](https://devalify.github.io/devalify/)
+## Selected work
 
-- 📫 How to reach me **alify.alves@hotmail.com**
+| Case | My contribution | Read more |
+| --- | --- | --- |
+| Financial SaaS support and applied AI | TypeScript support agent, human approval, and a read-only MCP data layer on AWS with tenant isolation and more than 430 automated tests. | [AI and MCP case](https://github.com/DevAlify/Projetos/blob/main/cases/ai-mcp-support.md) |
+| Production integrations | Root-cause investigation that unblocked 466 orders in an integration queue; SQL investigation across four production databases. | [SQL and integrations case](https://github.com/DevAlify/Projetos/blob/main/cases/sql-integrations.md) |
+| SaaS product at SyphraX | Fastify/PostgreSQL backend, Next.js/React frontend, recurring billing, concurrency controls and 153 automated tests. Product currently in beta. | [SaaS engineering case](https://github.com/DevAlify/Projetos/blob/main/cases/saas-engineering.md) |
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/alify-silva" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="alify-silva" height="30" width="40" /></a>
-</p>
+These case studies describe my contribution and its scope. Product and former-employer source code remain private. A separate educational example in the portfolio demonstrates webhook idempotency with synthetic data; it is not the production implementation.
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" alt="flask" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer"> <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
+## Experience
 
-<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=devalify&show_icons=true&locale=en&layout=compact" alt="devalify" /></p>
+- **GE Finance Gestão Ecommerce:** AI Engineer, July–September 2026; Senior Application Support Analyst, August 2025–June 2026.
+- **WTEAM Tecnologia:** freelance Full Stack Developer, January–June 2025; Java, Spring and React project for a banking-sector client.
+- **SyphraX:** Software Engineer and Co-founder; independent development of an own SaaS product, since May 2026.
+- **Arcólor Brasil:** technology career from 2017 to 2024, including IT technical responsibility, Java applications and ERP integrations.
+
+## Technologies I use
+
+**Backend:** TypeScript, Node.js, Fastify, Java, Spring Boot, REST APIs.  
+**Data:** PostgreSQL, SQL Server, SQL, Prisma, transactions and migrations.  
+**Frontend:** React, Next.js, TypeScript, React Query and Tailwind CSS.  
+**Applied AI and delivery:** MCP, Claude, Gemini, RAG, AWS Lambda, API Gateway, GitHub Actions and automated tests.
+
+## Português
+
+Sou engenheiro de software pleno, com foco em backend, full stack, integrações e IA aplicada. Minha experiência une desenvolvimento de software, SQL e investigação de problemas em produção. Na SyphraX, atuo como engenheiro de software e sócio-fundador em atividade independente. Busco uma oportunidade em um time de engenharia e estou aberto a trabalho remoto, híbrido ou presencial em São Paulo.
+
+Veja os [cases em português e inglês](https://github.com/DevAlify/Projetos) para conhecer minhas entregas, decisões técnicas e os limites de cada projeto.
+
+---
+
+This repository also contains the source for my personal website. It is a static site with no runtime dependencies. Requires Node.js 20+ for the optional local server and build scripts:
+
+```bash
+npm run dev
+npm run check
+npm run build
+```
+
+The build produces `dist/`. GitHub Pages can also serve the repository root directly.
