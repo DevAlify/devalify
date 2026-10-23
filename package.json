@@ -2,7 +2,7 @@
   "name": "alify-portfolio",
   "version": "2.0.0",
   "private": true,
-  "description": "Personal engineering portfolio for Alify Silva",
+  "description": "Personal engineering portfolio for Alify Lopes",
   "type": "module",
   "engines": { "node": ">=20" },
   "scripts": {
@@ -11,5 +11,5 @@
     "check": "node --check src/portfolio.js",
     "build": "node scripts/build.mjs"
   },
-  "author": "Alify Silva"
+  "author": "Alify Lopes"
 }
