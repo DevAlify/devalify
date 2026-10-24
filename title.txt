@@ -1,7 +1,0 @@
-Anotações:
-
-Gradiente - Section 1: bg-[linear-gradient(28deg,_rgba(26,27,30,1)_0%,_rgba(33,34,36,1)_50%,_rgba(39,40,43,1)_100%)] #212224 #1A1B1E
-
-
-sm:flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row
-
