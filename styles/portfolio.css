@@ -12,7 +12,7 @@ a{color:inherit;text-decoration:none}
 .wrap{width:min(var(--b-8),100% - var(--b-9));margin-inline:auto}
 .mono{font-family:var(--mono)}
 
-.prog{position:fixed;left:0;top:0;height:var(--b-10);width:100%;background:var(--acc);transform-origin:left;transform:scaleX(0);z-index:60}
+#reading-progress{position:fixed;left:0;top:0;height:var(--b-10);width:100%;background:var(--acc);transform-origin:left;transform:scaleX(0);z-index:60}
 header{position:fixed;top:0;left:0;right:0;z-index:50;mix-blend-mode:normal;background:linear-gradient(var(--bg),var(--b-11))}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:var(--b-12)}
 .logo{font-weight:700;font-size:1.3rem;letter-spacing:-.04em}
@@ -40,6 +40,10 @@ nav a.mail::after{display:none} nav a.mail:hover{color:var(--acc-ink);transform:
 .mono-art path{fill:none;stroke-linecap:square;stroke-linejoin:miter}
 .mono-art .m1{stroke:var(--acc);stroke-width:14}
 .mono-art .m2{stroke:var(--ink);stroke-width:1.2;opacity:.5}
+.anim .name i{transform:translateY(105%)}
+.anim .hero .rv{opacity:0}
+.anim .mono-art .m1{stroke-dasharray:1;stroke-dashoffset:1}
+.anim .mono-art .m2{opacity:0}
 
 .mq{border-block:var(--b-15) solid var(--line);overflow:hidden;padding:var(--b-26) 0;background:var(--bg2)}
 .mqt{display:flex;width:max-content;gap:0;animation:mq 38s linear infinite}

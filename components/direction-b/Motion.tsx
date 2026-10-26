@@ -11,23 +11,23 @@ type Policy = ReturnType<typeof motionPolicy>;
 
 function setupMotion(policy: Policy) {
   const { reduced, parallax } = policy;
+  document.documentElement.classList.toggle('anim', !reduced);
   const ease = 'expo.out';
   const reveal = (element: Element, scrollTrigger?: ScrollTrigger.Vars) => gsap.fromTo(element,
     { opacity: reduced ? 0.65 : 0, y: reduced ? 0 : 40 },
     { opacity: 1, y: 0, duration: reduced ? 0.2 : 1.1, ease, scrollTrigger });
-  gsap.fromTo('.name i', { yPercent: reduced ? 0 : 105, opacity: reduced ? 0.65 : 1 },
-    { yPercent: 0, opacity: 1, duration: reduced ? 0.2 : 1.3, ease, stagger: reduced ? 0 : 0.14, delay: reduced ? 0 : 0.1 });
+  if (reduced) gsap.fromTo('.name i', { opacity: 0.65 }, { opacity: 1, duration: 0.2 });
+  else gsap.to('.name i', { y: 0, yPercent: 0, duration: 1.3, ease, stagger: 0.14, delay: 0.1 });
   document.querySelectorAll('.hero .rv').forEach(element => reveal(element));
   document.querySelectorAll<SVGPathElement>('.mono-art .m1').forEach((path, index) => {
-    const length = path.getTotalLength();
-    gsap.fromTo(path, { strokeDasharray: length, strokeDashoffset: reduced ? 0 : length, opacity: reduced ? 0.65 : 1 },
-      { strokeDashoffset: 0, opacity: 1, duration: reduced ? 0.2 : 1.6, ease: 'power2.inOut', delay: reduced ? 0 : 0.3 + index * 0.45 });
+    gsap.to(path, { strokeDashoffset: 0, opacity: 1, duration: reduced ? 0.2 : 1.6,
+      ease: 'power2.inOut', delay: reduced ? 0 : 0.3 + index * 0.45 });
   });
   gsap.fromTo('.mono-art .m2', { opacity: 0, x: reduced ? 0 : -14, y: reduced ? 0 : -14 },
     { opacity: 0.5, x: 0, y: 0, duration: reduced ? 0.2 : 1.4, ease, delay: reduced ? 0 : 1.6 });
   if (!reduced) gsap.to('.mono-art', { y: -parallax, rotate: -4, ease: 'none',
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
-  gsap.fromTo('.prog', { scaleX: 0 }, { scaleX: 1, ease: 'none',
+  gsap.fromTo('#reading-progress', { scaleX: 0 }, { scaleX: 1, ease: 'none',
     scrollTrigger: { start: 0, end: 'max', scrub: reduced ? true : 0.3 } });
   document.querySelectorAll('.portrait-mask').forEach(element => {
     if (reduced) reveal(element, { trigger: element, start: 'top 92%', once: true });
@@ -43,21 +43,25 @@ function setupMotion(policy: Policy) {
   const distance = () => Math.max(0, (track?.scrollWidth ?? 0) - (pan?.clientWidth ?? 0));
   const horizontal = policy.pinCases && track && pan ? gsap.to(track, { x: () => -distance(), ease: 'none',
     scrollTrigger: { trigger: pan, start: 'top top+=40', end: () => `+=${distance()}`, pin: true, scrub: 1, invalidateOnRefresh: true } }) : undefined;
+  let focusFrame = 0;
   const focusCase = (event: FocusEvent) => {
     const card = event.target instanceof Element ? event.target.closest<HTMLElement>('.cs') : null;
     const trigger = horizontal?.scrollTrigger;
     if (!card || !trigger || !distance()) return;
-    if (pan) pan.scrollLeft = 0;
-    const bounds = card.getBoundingClientRect();
-    if (bounds.left >= 0 && bounds.right <= window.innerWidth) return;
-    const progress = Math.min(1, Math.max(0, (card.offsetLeft - (track?.offsetLeft ?? 0)) / distance()));
-    const destination = trigger.start + (trigger.end - trigger.start) * progress;
-    window.scrollTo({ top: destination, left: 0, behavior: 'instant' });
-    ScrollTrigger.update();
-    horizontal.progress(progress);
+    cancelAnimationFrame(focusFrame);
+    focusFrame = requestAnimationFrame(() => {
+      if (pan) pan.scrollLeft = 0;
+      const progress = Math.min(1, Math.max(0, (card.offsetLeft - (track?.offsetLeft ?? 0)) / distance()));
+      const destination = trigger.start + (trigger.end - trigger.start) * progress;
+      window.scrollTo({ top: destination, left: 0, behavior: 'instant' });
+      ScrollTrigger.update();
+      trigger.getTween()?.progress(1);
+      horizontal.progress(progress);
+    });
   };
   if (horizontal) track?.addEventListener('focusin', focusCase);
   const cleanPan = () => {
+    cancelAnimationFrame(focusFrame);
     track?.removeEventListener('focusin', focusCase);
     pan?.classList.remove('motion-horizontal');
   };
@@ -118,6 +122,7 @@ export default function Motion() {
     return () => {
       active = false;
       media.revert();
+      document.documentElement.classList.remove('anim');
       images.forEach(image => image.removeEventListener('load', refresh));
       window.removeEventListener('portfolio:language-change', refresh);
     };

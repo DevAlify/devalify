@@ -19,13 +19,12 @@ dd { margin: 0; }
 .lead { color: var(--mute); margin-top: var(--space-lg); max-width: 60ch; }
 .lbl, .slot>span { font: var(--label-size) var(--mono); color: var(--mute); }
 .tel { border-top: var(--hairline) solid var(--line); }
-.tile { padding-block: var(--space-xl); border-bottom: var(--hairline) solid var(--line); }
-.tile .in { display: grid; grid-template-columns: .7fr 1fr 1.3fr; gap: var(--space-lg); align-items: baseline; }
-.tile p, .note { color: var(--mute); }
+.metric-row { padding-block: var(--space-xl); border-bottom: var(--hairline) solid var(--line); }
+.metric-row .in { display: grid; grid-template-columns: .7fr 1fr 1.3fr; gap: var(--space-lg); align-items: baseline; }
+.metric-row p, .note { color: var(--mute); }
 .big { font-size: clamp(2rem,5vw,4.6rem); font-weight: 800; line-height: 1; letter-spacing: -.05em; }
 .big small { display: block; margin-top: var(--space-md); font: var(--label-size)/1.6 var(--mono); letter-spacing: 0; color: var(--mute); }
 .leg { display: flex; flex-wrap: wrap; gap: var(--space-md); font: var(--label-size)/1.6 var(--mono); }
-.ticks, .sbar, .wipe, .tile .prog { display: none; }
 .inv { border-top: var(--hairline) solid var(--line); }
 .inv article { padding-block: var(--space-xl); border-bottom: var(--hairline) solid var(--line); }
 .inv .in { display: grid; grid-template-columns: .7fr 1.3fr; gap: var(--section-gap); }
@@ -73,14 +72,15 @@ dd { margin: 0; }
 @media (min-width:901px) {
   .motion-horizontal .track { flex-direction: row; }
   .motion-horizontal .cs { flex: 0 0 min(78vw,var(--b-35)); height: calc(100dvh - var(--header-height)); min-height: 0; }
+  .motion-horizontal .cs::after { content: ""; position: absolute; inset-inline: 0; bottom: 0; height: var(--section-gap); background: linear-gradient(transparent, var(--bg2)); pointer-events: none; }
   .motion-horizontal .case-scroll { overflow-y: auto; scrollbar-width: thin; padding-right: var(--space-sm); }
   .motion-horizontal .pad { display: block; }
 }
 @media (max-width:900px) {
   .profile-grid { grid-template-columns: 1fr; }
   .portrait-mask { max-width: min(75%,var(--portrait-width)); }
-  .tile .in, .inv .in, .col2 { grid-template-columns: 1fr; }
-  .tile .in { gap: var(--space-lg); }
+  .metric-row .in, .inv .in, .col2 { grid-template-columns: 1fr; }
+  .metric-row .in { gap: var(--space-lg); }
   .cs { height: auto; }
 }
 @media (max-width:640px) {

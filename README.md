@@ -60,6 +60,13 @@ overflow, foco nos cases, anos, conteúdo sem JS e movimento reduzido. Capturas 
 ficam em `lib/.qa/`, ignorado pelo Git. O Chrome deve ser iniciado com um
 perfil exclusivo; nunca conecte esse teste ao perfil de uso pessoal.
 
+O teste bloqueia os scripts externos para verificar o estado do hero antes
+da hidratação e usa Tab real pelos cinco links de case. Sem JavaScript,
+o conteúdo continua visível; movimento reduzido não ativa a classe `anim`.
+
+`node lib/render-og.mjs` renderiza `public/og-source.html` em `public/og.png`
+com 1200 x 630, usando o mesmo preview e Chrome isolado. A fonte é local.
+
 ## Status
 
 - Feito: direção B, conteúdo PT/EN, foto alify-b, animações e export estático.
