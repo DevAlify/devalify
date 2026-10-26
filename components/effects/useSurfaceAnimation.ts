@@ -15,7 +15,7 @@ export function useSurfaceAnimation(ref: RefObject<HTMLElement | null>, setup: S
     const surface = ref.current;
     if (!surface) return;
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-    const mobile = matchMedia("(max-width: 700px)").matches;
+    const mobile = matchMedia("(max-width: 899px)").matches;
     let current: ReturnType<SurfaceSetup>;
     let frame = 0;
     let previous = 0;

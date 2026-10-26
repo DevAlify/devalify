@@ -195,7 +195,7 @@ h2{font:700 clamp(1.5rem,3.3vw,2.8rem)/1.12 var(--disp);letter-spacing:-.015em;m
 .art *{vector-effect:non-scaling-stroke}
 .flow{stroke-dasharray:5 7} .anim .flow{animation:flow 2.4s linear infinite} @keyframes flow{to{stroke-dashoffset:-48}}
 .pulse{transform-origin:center;transform-box:fill-box} .anim .pulse{animation:pls 2.6s ease-in-out infinite} @keyframes pls{50%{transform:scale(1.35);opacity:.6}}
-@media(max-width:900px){.acc{flex-direction:column;height:auto}.pane,.pane.open{flex:none;min-height:var(--size-107)}.pane .det{max-height:none;opacity:1}.pane svg.art,.pane:not(.open) svg.art{width:50%;transform:none}}
+@media(max-width:900px){.acc{flex-direction:column;height:auto}.pane,.pane.open{flex:none;height:var(--size-107)}.pane .det{max-height:none;opacity:1}.pane svg.art,.pane:not(.open) svg.art{width:50%;transform:none}}
 /* cases */
 .cards{display:grid;gap:var(--size-108);perspective:var(--size-109)}
 .cd .tilt{transform-style:preserve-3d}
@@ -258,7 +258,11 @@ a.fb:hover svg{transform:translate(var(--size-2),var(--size-33))}
 .flat .scene{height:auto;perspective:none;overflow:visible}
 .flat .floor,.flat .dots{display:none}
 .flat .scene .hd2{position:static;margin-bottom:var(--size-22)}
-.flat .planes{position:static;display:grid;gap:var(--size-45)}
+.flat .planes{position:relative;display:grid;gap:var(--size-45)}
+.flat .planes::before{content:"";position:absolute;left:calc(-1 * var(--size-8));top:0;bottom:0;width:var(--size-2);background:linear-gradient(var(--cy),var(--mag));transform:scaleY(1);transform-origin:top;transition:transform var(--timeline-duration) var(--ease);pointer-events:none}
+.anim .flat .planes::before{transform:scaleY(0)}
+.anim .flat .planes:has(.timeline-in)::before{transform:scaleY(1)}
+@media(prefers-reduced-motion:reduce){.flat .planes::before{transform:scaleY(1);transition:none}}
 .flat .pl{position:static;width:auto;transform:none!important;opacity:1!important}
 .flat .pl .y{color:var(--cy);-webkit-text-stroke:0}
 /* formação, idiomas, disponibilidade */

@@ -1,6 +1,7 @@
 :root {
   --art-middle:#0a0d1d; --art-front:#0d1124; --resume-note-size:15px;
   --viewport-height:100dvh; --hero-pause:1.8s;
+  --timeline-duration:1.4s;
   --size-1:17px;
   --size-2:2px;
   --size-3:3px;

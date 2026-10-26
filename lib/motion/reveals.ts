@@ -68,5 +68,6 @@ export function setupReveals(once: Once, mobile: boolean, cleanups: Cleanup[]) {
     timers.forEach(clearTimeout);
     elements('.rv,.pan,.prog,.acc').forEach(element => { element.classList.remove('in'); element.style.removeProperty('transition-delay'); });
     elements('.ticks i').forEach(tick => tick.classList.remove('on'));
+    elements('.timeline-in').forEach(plane => plane.classList.remove('timeline-in'));
   });
 }

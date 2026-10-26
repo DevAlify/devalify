@@ -51,7 +51,7 @@ disponível. O terminal abre pelo botão ou Alt+~, fecha com Escape e aceita
 ## Verificação visual
 
 `node lib/browser-check.mjs` verifica o export com Chrome isolado via CDP
-na porta 9333 e o preview na porta 4173. Usa 375 e 1440 px, testa idioma,
+na porta 9333 e o preview na porta 4173. Usa 375, 390 e 1440 px, testa idioma,
 flip, terminal, foco, túnel animado e movimento reduzido. Capturas locais
 ficam em `lib/.qa/`, ignorado pelo Git. O Chrome deve ser iniciado com um
 perfil exclusivo; nunca conecte esse teste ao perfil de uso pessoal.
