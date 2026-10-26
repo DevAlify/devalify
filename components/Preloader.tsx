@@ -12,7 +12,10 @@ export default function Preloader({ language }: { language: Language }) {
   const [closed, setClosed] = useState(false);
   const [line, setLine] = useState(0);
   const close = useCallback(() => {
-    setClosed(true); window.dispatchEvent(new Event('portfolio:boot-complete'));
+    setClosed(previous => {
+      if (!previous) window.dispatchEvent(new Event('portfolio:boot-complete'));
+      return true;
+    });
   }, []);
   useEffect(() => {
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
