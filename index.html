@@ -47,7 +47,7 @@
   </nav>
 </div></header>
 <nav class="rail" aria-label="Seções" data-en-label="Sections"><a href="#top" aria-label="Início" data-en-label="Home"></a><a href="#numeros" aria-label="Números" data-en-label="Numbers"></a><a href="#pilares" aria-label="Pilares" data-en-label="Pillars"></a><a href="#cases" aria-label="Cases"></a><a href="#inventario" aria-label="Stack"></a><a href="#trajetoria" aria-label="Trajetória" data-en-label="Career"></a><a href="#formacao" aria-label="Formação" data-en-label="Education"></a><a href="#contato" aria-label="Contato" data-en-label="Contact"></a></nav>
-<button class="tbtn" id="tbtn" type="button" aria-haspopup="dialog">terminal [~]</button>
+<button class="tbtn" id="tbtn" type="button" aria-haspopup="dialog">terminal [Alt+~]</button>
 
 <main id="main">
 <section class="hero" id="top">
@@ -103,7 +103,7 @@
       <article class="hud tile tl1 rv"><div class="in"><span class="lbl" data-en="mcp server, ge finance">servidor mcp, ge finance</span><div class="big"><span data-count="430" data-suffix="+">430+</span><small data-en="tests">testes</small></div><p data-en="Read-only, 31 fixed parameterized SQL queries and 1,067 columns validated against the schema.">Somente leitura, 31 consultas SQL fechadas e parametrizadas e 1.067 colunas validadas contra o schema.</p><div class="ticks" aria-hidden="true"></div></div></article>
       <article class="hud tile tl2 rv"><div class="in"><span class="lbl" data-en="l3 support">sustentação n3</span><div class="big"><span data-count="466">466</span></div><p data-en="orders stuck for two months, released after tracing the root cause.">pedidos presos há dois meses, liberados após rastrear a causa raiz.</p></div></article>
       <article class="hud tile tl3 rv"><div class="in"><span class="lbl" data-en="syphrax erp">erp syphrax</span><div class="big"><span data-count="15">15</span><small data-en="modules">módulos</small></div><p data-en="68 tables and 43 migrations on PostgreSQL.">68 tabelas e 43 migrations em PostgreSQL.</p></div></article>
-      <article class="hud tile tl4 rv"><div class="in"><span class="lbl" data-en="erp quality">qualidade do erp</span><div class="big"><span data-count="2240" data-prefix="~" data-fmt="1">~2.240</span></div><p data-en="test cases.">casos de teste.</p><div class="sbar" aria-hidden="true"><i style="flex:231"></i><i style="flex:24"></i></div><div class="leg"><span style="color:var(--cy)" data-en="231 Vitest files">231 arquivos Vitest</span><span style="color:var(--mag)" data-en="24 Playwright specs">24 specs Playwright</span></div></div></article>
+      <article class="hud tile tl4 rv"><div class="in"><span class="lbl" data-en="erp quality">qualidade do erp</span><div class="big"><span data-count="2240" data-prefix="~" data-fmt="1" data-en="~2,240">~2.240</span></div><p data-en="test cases.">casos de teste.</p><div class="sbar" aria-hidden="true"><i style="flex:231"></i><i style="flex:24"></i></div><div class="leg"><span style="color:var(--cy)" data-en="231 Vitest files">231 arquivos Vitest</span><span style="color:var(--mag)" data-en="24 Playwright specs">24 specs Playwright</span></div></div></article>
       <article class="hud tile tl5 rv"><div class="in"><span class="lbl" data-en="agent evals">evals do agente</span><div class="big"><span data-count="51">51</span><small data-en="cases">casos</small></div><p data-en="Real ones, from 545 tickets. 10 sealed (20%) and reserved to decide autonomy.">Reais, de 545 chamados. 10 selados (20%) reservados para decidir autonomia.</p><div class="prog" aria-hidden="true" style="--w:20%"><i></i></div></div></article>
       <article class="hud tile tl6 rv"><div class="in"><span class="lbl" data-en="integrity">integridade</span><div class="big"><span data-count="42">42</span><small data-en="CI checks on the agent, 198 tests on the PR reviewer">checks de CI no agente, 198 testes no revisor de PR</small></div><p data-en="Checks built from real failures: credential leaks, message bursts and concurrency overruns.">Verificações criadas a partir de falhas reais: vazamento de credencial, rajada de mensagens e estouro de concorrência.</p></div></article>
     </div>
@@ -121,9 +121,9 @@
           <circle class="pulse" cx="120" cy="122" r="26" fill="#19f0ff" fill-opacity=".14" stroke="#19f0ff"/><circle cx="120" cy="122" r="10" fill="#19f0ff"/>
           <g fill="#080a16" stroke="#ff2bd6" stroke-width="1.4"><rect x="30" y="50" width="20" height="20"/><rect x="195" y="40" width="20" height="20"/><rect x="40" y="180" width="20" height="20"/><rect x="190" y="186" width="20" height="20"/></g>
         </svg>
-        <button class="hd" type="button" aria-expanded="true"><h3 data-en="Applied AI">IA aplicada</h3>
-          <div class="det"><p data-en="Agents with controlled data access, evaluated against real cases before gaining autonomy.">Agentes com acesso controlado a dados, avaliados contra casos reais antes de ganhar autonomia.</p>
-          <div class="chips"><span class="chip">Claude</span><span class="chip">Vercel AI SDK</span><span class="chip">MCP</span><span class="chip">RAG</span><span class="chip">Evals</span><span class="chip">Guardrails</span></div></div></button>
+        <div class="hd"><h3><button type="button" aria-expanded="true" aria-controls="p-ia" data-en="Applied AI">IA aplicada</button></h3>
+          <div class="det" id="p-ia"><p data-en="Agents with controlled data access, evaluated against real cases before gaining autonomy.">Agentes com acesso controlado a dados, avaliados contra casos reais antes de ganhar autonomia.</p>
+          <div class="chips"><span class="chip">Claude</span><span class="chip">Vercel AI SDK</span><span class="chip">MCP</span><span class="chip">RAG</span><span class="chip">Evals</span><span class="chip">Guardrails</span></div></div></div>
       </div></div>
       <div class="pane hud"><div class="in">
         <svg class="art" viewBox="0 0 240 240" fill="none" aria-hidden="true">
@@ -131,9 +131,9 @@
           <path class="flow" d="M120 200v30M60 20v-14M180 20v-14" stroke="#ff2bd6" stroke-width="1.4"/>
           <circle class="pulse" cx="120" cy="106" r="4" fill="#19f0ff"/><circle class="pulse" cx="120" cy="146" r="4" fill="#ff2bd6" style="animation-delay:.8s"/><circle class="pulse" cx="120" cy="64" r="4" fill="#ffb300" style="animation-delay:1.6s"/>
         </svg>
-        <button class="hd" type="button" aria-expanded="false"><h3>Backend</h3>
-          <div class="det"><p data-en="APIs and queues that handle failure: idempotency, database-level auditing and SQL that holds up under volume.">APIs e filas que lidam com falha: idempotência, auditoria no banco e SQL que aguenta volume.</p>
-          <div class="chips"><span class="chip">Node.js</span><span class="chip">Fastify</span><span class="chip">PostgreSQL</span><span class="chip">pg-boss</span><span class="chip">Java 21</span></div></div></button>
+        <div class="hd"><h3><button type="button" aria-expanded="false" aria-controls="p-be">Backend</button></h3>
+          <div class="det" id="p-be"><p data-en="APIs and queues that handle failure: idempotency, database-level auditing and SQL that holds up under volume.">APIs e filas que lidam com falha: idempotência, auditoria no banco e SQL que aguenta volume.</p>
+          <div class="chips"><span class="chip">Node.js</span><span class="chip">Fastify</span><span class="chip">PostgreSQL</span><span class="chip">pg-boss</span><span class="chip">Java 21</span></div></div></div>
       </div></div>
       <div class="pane hud"><div class="in">
         <svg class="art" viewBox="0 0 240 240" fill="none" aria-hidden="true">
@@ -141,9 +141,9 @@
           <path class="flow" d="M92 140h90M92 160h60" stroke="#ff2bd6" stroke-width="1.4" transform="skewY(-6)"/>
           <path d="M150 170l22 8-9 4 7 12-6 3-7-12-7 6z" fill="#e6f1ff" class="pulse"/>
         </svg>
-        <button class="hd" type="button" aria-expanded="false"><h3>Full Stack</h3>
-          <div class="det"><p data-en="From the database to the interface, with end-to-end tests and a pipeline that blocks leaked secrets.">Do banco à interface, com testes de ponta a ponta e pipeline que barra segredo vazado.</p>
-          <div class="chips"><span class="chip">Next.js 16</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Playwright</span></div></div></button>
+        <div class="hd"><h3><button type="button" aria-expanded="false" aria-controls="p-fs">Full Stack</button></h3>
+          <div class="det" id="p-fs"><p data-en="From the database to the interface, with end-to-end tests and a pipeline that blocks leaked secrets.">Do banco à interface, com testes de ponta a ponta e pipeline que barra segredo vazado.</p>
+          <div class="chips"><span class="chip">Next.js 16</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Playwright</span></div></div></div>
       </div></div>
     </div>
   </div>
@@ -162,7 +162,7 @@
               <p class="sm" data-en="L1 agent in TypeScript (Claude via the Vercel AI SDK) integrated with WhatsApp and TomTicket: it queries data through tool calling, triggers a diagnostic subagent and delivers an analysis and a draft reply for human approval.">Agente N1 em TypeScript (Claude via Vercel AI SDK) integrado a WhatsApp e TomTicket: consulta dados por tool calling, aciona um subagente de diagnóstico e entrega análise e rascunho para aprovação humana.</p>
               <div class="chips"><span class="chip">TypeScript</span><span class="chip">Claude</span><span class="chip">MCP</span><span class="chip">AWS Lambda</span><span class="chip">SQL Server</span><span class="chip">pgvector</span></div></div>
             <div class="stats">
-              <div class="stat"><b>31</b><span data-en="fixed SQL queries">consultas SQL fechadas</span></div><div class="stat am"><b>430+</b><span data-en="tests on the MCP">testes no MCP</span></div><div class="stat"><b>1.067</b><span data-en="columns validated">colunas validadas</span></div>
+              <div class="stat"><b>31</b><span data-en="fixed SQL queries">consultas SQL fechadas</span></div><div class="stat am"><b>430+</b><span data-en="tests on the MCP">testes no MCP</span></div><div class="stat"><b data-en="1,067">1.067</b><span data-en="columns validated">colunas validadas</span></div>
               <div class="stat mg"><b>51</b><span data-en="evals, from 545 tickets">evals, de 545 chamados</span></div><div class="stat"><b>42</b><span data-en="CI checks">checks de CI</span></div><div class="stat am"><b>176</b><span data-en="repositories mapped">repositórios mapeados</span></div>
               <div class="stat w"><span data-en="10 sealed cases (20%) reserved to decide autonomy">10 casos selados (20%) reservados para decidir autonomia</span><div class="prog" style="--w:20%"><i></i></div></div>
             </div></div>
@@ -221,7 +221,7 @@
               <div class="chips"><span class="chip">TypeScript</span><span class="chip">PostgreSQL</span><span class="chip">Next.js 16</span><span class="chip">React 19</span><span class="chip">pg-boss</span><span class="chip">Cloudflare</span></div></div>
             <div class="stats">
               <div class="stat am"><b>15</b><span data-en="modules">módulos</span></div><div class="stat"><b>68</b><span data-en="tables">tabelas</span></div><div class="stat"><b>43</b><span>migrations</span></div>
-              <div class="stat mg"><b>~2.240</b><span data-en="test cases">casos de teste</span></div><div class="stat"><b>8</b><span data-en="external integrations">integrações externas</span></div><div class="stat am"><b>13</b><span data-en="queue jobs">jobs em fila</span></div>
+              <div class="stat mg"><b data-en="~2,240">~2.240</b><span data-en="test cases">casos de teste</span></div><div class="stat"><b>8</b><span data-en="external integrations">integrações externas</span></div><div class="stat am"><b>13</b><span data-en="queue jobs">jobs em fila</span></div>
               <div class="stat w"><span data-en="Auditing enforced by the database, RBAC with TOTP and LGPD routines">Auditoria imposta pelo banco, RBAC com TOTP e rotinas de LGPD</span></div>
             </div></div>
           <div class="fbs"><button class="fb" type="button"><span data-en="See the dossier">Ver o dossiê</span> <svg viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
@@ -250,7 +250,7 @@
               <p class="sm" data-en="ERP for small businesses that runs on the customer's own server, so the customer owns the data. Several installations that stay updatable without losing that isolation.">ERP para pequenos negócios que roda no servidor do próprio cliente, que fica dono dos dados. Várias instalações que continuam atualizáveis sem perder esse isolamento.</p>
               <div class="chips"><span class="chip">Next.js 16</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span></div></div>
             <div class="stats">
-              <div class="stat am"><b>8</b><span data-en="business modules">módulos de negócio</span></div><div class="stat mg"><b>~2.800</b><span data-en="test cases">casos de teste</span></div><div class="stat"><b>v1.0</b><span data-en="validated product">produto validado</span></div>
+              <div class="stat am"><b>8</b><span data-en="business modules">módulos de negócio</span></div><div class="stat mg"><b data-en="~2,800">~2.800</b><span data-en="test cases">casos de teste</span></div><div class="stat"><b>v1.0</b><span data-en="validated product">produto validado</span></div>
               <div class="stat w"><span data-en="Multi-store, NF-e, 2FA, daily backup and a deploy that rolls itself back">Multi-loja, NF-e, 2FA, backup diário e deploy que se desfaz sozinho</span></div>
             </div></div>
           <div class="fbs"><button class="fb" type="button"><span data-en="See the dossier">Ver o dossiê</span> <svg viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
@@ -391,7 +391,7 @@
   </div>
 </section>
 </main>
-<footer><div class="wrap"><span>Alify Lopes, São Paulo</span><span data-en="Remote, hybrid or on-site">Remoto, híbrido ou presencial</span><button class="tlink" id="tbtn2" type="button" aria-haspopup="dialog">terminal [~]</button></div></footer>
+<footer><div class="wrap"><span>Alify Lopes, São Paulo</span><span data-en="Remote, hybrid or on-site">Remoto, híbrido ou presencial</span><button class="tlink" id="tbtn2" type="button" aria-haspopup="dialog">terminal [Alt+~]</button></div></footer>
 
 <div id="term" role="dialog" aria-modal="true" aria-label="Mini-terminal" hidden><div class="box"><div class="hud s"><div class="in">
   <div class="top"><span id="tprompt">alify@syphrax:~$ (Esc fecha)</span><button type="button" id="tclose" aria-label="Fechar terminal">x</button></div>

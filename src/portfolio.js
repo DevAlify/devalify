@@ -33,8 +33,8 @@
 
   /* ---------- Acordeão de pilares ---------- */
   var panes=$$('.pane');
-  function openPane(p){ panes.forEach(function(x){var on=x===p;x.classList.toggle('open',on);$('.hd',x).setAttribute('aria-expanded',on)}); }
-  panes.forEach(function(p){ $('.hd',p).addEventListener('click',function(){openPane(p)});
+  function openPane(p){ panes.forEach(function(x){var on=x===p;x.classList.toggle('open',on);$('.hd button',x).setAttribute('aria-expanded',on)}); }
+  panes.forEach(function(p){ $('.hd button',p).addEventListener('click',function(){openPane(p)});
     p.addEventListener('pointerenter',function(){ if(matchMedia('(hover: hover) and (min-width: 901px)').matches) openPane(p) }); });
 
   /* ---------- Tooltip global (evita corte pelos painéis recortados) ---------- */
@@ -52,7 +52,7 @@
   var term=$('#term'), tout=$('#tout'), tin=$('#tin'), lastFocus=null;
   var T={
     pt:{hello:'terminal de Alify Lopes. digite help.',nf:function(v){return 'comando não encontrado: '+v+'. tente help.'},ph:'digite help',prompt:'alify@syphrax:~$ (Esc fecha)',close:'Fechar terminal',lab:'Comando',skip:'clique ou Esc para pular',
-      help:'comandos: help, whoami, stack, cases, timeline, edu, contact, clear, exit',
+      help:'comandos: help, whoami, stack, cases, timeline, edu, contact, clear, exit. atalho: Alt+~',
       whoami:'Alify Lopes, engenheiro de IA e software. São Paulo, SP. Em tecnologia desde 2017. Cofundador e CTO da syphrax.',
       stack:'IA: Claude, MCP, RAG, evals, guardrails\nBackend: Node.js, Fastify, Spring Boot, pg-boss\nDados: PostgreSQL, SQL Server, Elasticsearch\nFrontend: Next.js, React, TypeScript, GSAP\nCloud: AWS, Docker, Coolify, Cloudflare\nQualidade: Vitest, Playwright, gitleaks, Semgrep',
       cases:'1) agente de suporte: MCP somente leitura, 31 consultas, 430+ testes, 51 evals\n2) Argos, revisor de PR com LLM: 198 testes, 2 contêineres isolados\n3) ERP syphrax: 15 módulos, 68 tabelas, ~2.240 testes, 8 integrações\n4) Genoma: ERP instalado na infraestrutura do cliente, 8 módulos\n5) agente de currículo sob medida: Codex redige, Claude revisa\ntodos os cases: '+CASES,
@@ -60,7 +60,7 @@
       edu:'Tecnólogo em Análise e Desenvolvimento de Sistemas, Faculdade Impacta, 2020 a 2021\nFull Stack (240h), Udemy; Java Programmer I a III (100h), Impacta; Java Elite, UNIPDS (interrompida)',
       contact:'whatsapp: '+WA+'\ne-mail: alify.alves@hotmail.com\nlinkedin: linkedin.com/in/alify-silva\ngithub: github.com/DevAlify\ncurrículo sob pedido: peça pelo WhatsApp ou por e-mail'},
     en:{hello:"Alify Lopes's terminal. type help.",nf:function(v){return 'command not found: '+v+'. try help.'},ph:'type help',prompt:'alify@syphrax:~$ (Esc closes)',close:'Close terminal',lab:'Command',skip:'click or Esc to skip',
-      help:'commands: help, whoami, stack, cases, timeline, edu, contact, clear, exit',
+      help:'commands: help, whoami, stack, cases, timeline, edu, contact, clear, exit. shortcut: Alt+~',
       whoami:'Alify Lopes, AI and software engineer. São Paulo, Brazil. In tech since 2017. Co-founder and CTO at syphrax.',
       stack:'AI: Claude, MCP, RAG, evals, guardrails\nBackend: Node.js, Fastify, Spring Boot, pg-boss\nData: PostgreSQL, SQL Server, Elasticsearch\nFrontend: Next.js, React, TypeScript, GSAP\nCloud: AWS, Docker, Coolify, Cloudflare\nQuality: Vitest, Playwright, gitleaks, Semgrep',
       cases:'1) support agent: read-only MCP, 31 queries, 430+ tests, 51 evals\n2) Argos, LLM PR reviewer: 198 tests, 2 isolated containers\n3) syphrax ERP: 15 modules, 68 tables, ~2,240 tests, 8 integrations\n4) Genoma: ERP installed on the customer infrastructure, 8 modules\n5) tailored resume agent: Codex drafts, Claude reviews\nall cases: '+CASES,
@@ -76,7 +76,7 @@
   addEventListener('keydown',function(e){
     if(e.key==='Escape'&&!term.hidden){closeTerm();return}
     var tag=(e.target.tagName||'').toLowerCase();
-    if((e.key==='~'||e.code==='Backquote')&&tag!=='input'&&tag!=='textarea'){e.preventDefault();term.hidden?openTerm():closeTerm()}
+    if(e.altKey&&e.code==='Backquote'&&tag!=='input'&&tag!=='textarea'){e.preventDefault();term.hidden?openTerm():closeTerm()}
     if(e.key==='Tab'&&!term.hidden){var f=[$('#tclose'),tin];var i=f.indexOf(document.activeElement);e.preventDefault();f[(i+(e.shiftKey?-1:1)+f.length)%f.length].focus()}
   });
   $('#tform').addEventListener('submit',function(e){e.preventDefault();var v=tin.value.trim().toLowerCase();tin.value='';if(!v)return;tprint('$ '+v,'c');
@@ -99,7 +99,7 @@
     if(en||!first)$$('[data-en-label]').forEach(function(e){ if(e.dataset.ptLabel==null)e.dataset.ptLabel=e.getAttribute('aria-label'); e.setAttribute('aria-label',en?e.dataset.enLabel:e.dataset.ptLabel); });
     if(en||!first)$$('[data-en-alt]').forEach(function(e){ if(e.dataset.ptAlt==null)e.dataset.ptAlt=e.getAttribute('alt'); e.setAttribute('alt',en?e.dataset.enAlt:e.dataset.ptAlt); });
     $$('.gl').forEach(function(h){h.setAttribute('data-text',h.textContent)});
-    $$('.chip[data-tip]').forEach(function(c){c.setAttribute('aria-label',c.textContent+': '+tipOf(c))});
+    $$('.chip[data-tip]').forEach(function(c){c.setAttribute('role','note');c.setAttribute('aria-label',c.textContent+': '+tipOf(c))});
     if(en||!first){h1.innerHTML=H1[l]; h1.setAttribute('aria-label',H1L[l]); if(splitH1){splitH1(); if(!first)gsap.set(hc,{opacity:1,yPercent:0,fontVariationSettings:'"wght" 700'})}}
     var m=META[l]; document.title=m.title;
     $('meta[name="description"]').content=m.desc; $('meta[property="og:title"]').content=m.title; $('meta[property="og:description"]').content=m.ogd;
@@ -205,7 +205,7 @@ var LINES={pt:['núcleo carregado','agente N1: guardrails ativos','servidor MCP:
     gsap.to(prev,{scale:.97,ease:'none',transformOrigin:'50% 100%',scrollTrigger:{trigger:p,start:'top bottom',end:'top 30%',scrub:true}})});
   // contadores e ticks
   $$('[data-count]').forEach(function(el){var end=+el.dataset.count,suf=el.dataset.suffix||'',pre_=el.dataset.prefix||'',fmt=el.dataset.fmt,o={v:0};
-    once(el,'top 92%',function(){gsap.to(o,{v:end,duration:1.8,ease:'power2.out',onUpdate:function(){var n=Math.round(o.v);el.textContent=pre_+(fmt?n.toLocaleString('pt-BR'):n)+suf}})})});
+    once(el,'top 92%',function(){gsap.to(o,{v:end,duration:1.8,ease:'power2.out',onUpdate:function(){var n=Math.round(o.v);el.textContent=pre_+(fmt?n.toLocaleString(lang==='en'?'en-US':'pt-BR'):n)+suf}})})});
   $$('.ticks').forEach(function(t){var is=$$('i',t);once(t,'top 92%',function(){is.forEach(function(e,i){setTimeout(function(){e.classList.add('on')},i*45)})})});
   $$('.prog i').forEach(function(i){if(small){once(i,'',function(){i.parentNode.classList.add('in')})}else gsap.from(i,{width:0,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:i,start:'top 94%',once:true}})});
   // cartões: inclinação com o ponteiro (só de frente)
