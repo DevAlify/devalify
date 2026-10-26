@@ -12,6 +12,7 @@ type Policy = ReturnType<typeof motionPolicy>;
 function setupMotion(policy: Policy) {
   const { reduced, parallax } = policy;
   document.documentElement.classList.toggle('anim', !reduced);
+  gsap.set('.name i, .hero .rv, .mono-art .m1, .mono-art .m2', { animation: 'none' });
   const ease = 'expo.out';
   const reveal = (element: Element, scrollTrigger?: ScrollTrigger.Vars) => gsap.fromTo(element,
     { opacity: reduced ? 0.65 : 0, y: reduced ? 0 : 40 },
@@ -20,7 +21,8 @@ function setupMotion(policy: Policy) {
   else gsap.to('.name i', { y: 0, yPercent: 0, duration: 1.3, ease, stagger: 0.14, delay: 0.1 });
   document.querySelectorAll('.hero .rv').forEach(element => reveal(element));
   document.querySelectorAll<SVGPathElement>('.mono-art .m1').forEach((path, index) => {
-    gsap.to(path, { strokeDashoffset: 0, opacity: 1, duration: reduced ? 0.2 : 1.6,
+    gsap.fromTo(path, { strokeDashoffset: reduced ? 0 : 100, opacity: reduced ? 0.65 : 1 },
+      { strokeDashoffset: 0, autoRound: false, opacity: 1, duration: reduced ? 0.2 : 1.6,
       ease: 'power2.inOut', delay: reduced ? 0 : 0.3 + index * 0.45 });
   });
   gsap.fromTo('.mono-art .m2', { opacity: 0, x: reduced ? 0 : -14, y: reduced ? 0 : -14 },

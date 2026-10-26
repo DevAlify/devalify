@@ -73,6 +73,7 @@ dd { margin: 0; }
   .motion-horizontal .track { flex-direction: row; }
   .motion-horizontal .cs { flex: 0 0 min(78vw,var(--b-35)); height: calc(100dvh - var(--header-height)); min-height: 0; }
   .motion-horizontal .cs::after { content: ""; position: absolute; inset-inline: 0; bottom: 0; height: var(--section-gap); background: linear-gradient(transparent, var(--bg2)); pointer-events: none; }
+  .motion-horizontal .cs:hover::after { background: linear-gradient(transparent, var(--b-37)); }
   .motion-horizontal .case-scroll { overflow-y: auto; scrollbar-width: thin; padding-right: var(--space-sm); }
   .motion-horizontal .pad { display: block; }
 }

@@ -35,8 +35,8 @@ export default function Portfolio() {
         </div>
         <svg className="mono-art" viewBox="0 0 280 220" role="img" aria-label="Monograma AL" data-en-label="AL monogram">
           <g transform="translate(10 10)"><path className="m2" d="M26 196 L86 26 L146 196 M48 142 H124 M188 26 V196 H262" /></g>
-          <path className="m1" pathLength="1" d="M20 190 L80 20 L140 190 M42 136 H118" />
-          <path className="m1" pathLength="1" d="M182 20 V190 H256" />
+          <path className="m1" pathLength="100" d="M20 190 L80 20 L140 190 M42 136 H118" />
+          <path className="m1" pathLength="100" d="M182 20 V190 H256" />
         </svg>
       </div></section>
       <Marquee />

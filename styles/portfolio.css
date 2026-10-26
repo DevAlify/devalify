@@ -40,10 +40,12 @@ nav a.mail::after{display:none} nav a.mail:hover{color:var(--acc-ink);transform:
 .mono-art path{fill:none;stroke-linecap:square;stroke-linejoin:miter}
 .mono-art .m1{stroke:var(--acc);stroke-width:14}
 .mono-art .m2{stroke:var(--ink);stroke-width:1.2;opacity:.5}
-.anim .name i{transform:translateY(105%)}
+.anim .name i{transform:translateY(130%)}
 .anim .hero .rv{opacity:0}
-.anim .mono-art .m1{stroke-dasharray:1;stroke-dashoffset:1}
-.anim .mono-art .m2{opacity:0}
+.anim .mono-art .m1{stroke-dasharray:100;stroke-dashoffset:100}
+.anim .mono-art .m2{opacity:0;--hero-final-opacity:.5}
+.anim .name i,.anim .hero .rv,.anim .mono-art .m1,.anim .mono-art .m2{animation:hero-fallback .2s ease-out 4s forwards}
+@keyframes hero-fallback{to{opacity:var(--hero-final-opacity,1);transform:none;stroke-dashoffset:0}}
 
 .mq{border-block:var(--b-15) solid var(--line);overflow:hidden;padding:var(--b-26) 0;background:var(--bg2)}
 .mqt{display:flex;width:max-content;gap:0;animation:mq 38s linear infinite}
