@@ -18,6 +18,7 @@ export default function Preloader({ language }: { language: Language }) {
     });
   }, []);
   useEffect(() => {
+    if (closed) return; // fechado: o cleanup anterior já limpou o intervalo
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
     if (reduced.matches) { close(); return; }
     let current = 0;
@@ -29,7 +30,7 @@ export default function Preloader({ language }: { language: Language }) {
     const onReduce = () => { if (reduced.matches) close(); };
     window.addEventListener('keydown', onKey); reduced.addEventListener('change', onReduce);
     return () => { clearInterval(interval); window.removeEventListener('keydown', onKey); reduced.removeEventListener('change', onReduce); };
-  }, [close]);
+  }, [close, closed]);
   if (closed) return null;
   const percent = Math.round(line / boot.pt.length * 100);
   return <div id="pre" onClick={close}><div className="b"><pre aria-hidden="true">{boot[language].slice(0, line).map((text, index) => <span key={text}><b>[ ok ]</b> {text}{index < line - 1 ? '\n' : ''}</span>)}</pre><div className="bar" aria-hidden="true"><i style={{ width: `${percent}%` }} /></div><div className="pc"><button type="button" onClick={close}>{language === 'pt' ? 'clique ou Esc para pular' : 'click or Esc to skip'}</button><span aria-hidden="true">{percent}%</span></div></div></div>;
