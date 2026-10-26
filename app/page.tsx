@@ -1,6 +1,5 @@
-import PortfolioContent from '@/components/content/PortfolioContent';
-import Experience from '@/components/Experience';
+import Portfolio from '@/components/direction-b/Portfolio';
 
 export default function Home() {
-  return <><PortfolioContent /><Experience /></>;
+  return <Portfolio />;
 }

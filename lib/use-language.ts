@@ -25,12 +25,6 @@ export function useLanguage(): Language {
       document.documentElement.lang = next === 'pt' ? 'pt-BR' : 'en';
       originals.forEach((pt, el) => { el.innerHTML = next === 'en' ? el.getAttribute('data-en') ?? pt : pt; });
       attributes.forEach((values, el) => values.forEach((pt, attr) => el.setAttribute(attr, next === 'en' ? el.getAttribute(attr === 'alt' ? 'data-en-alt' : 'data-en-label') ?? pt : pt)));
-      const h1 = document.getElementById('h1');
-      if (h1) {
-        h1.innerHTML = next === 'pt' ? 'Do dado ao agente, em <em>produção</em>.' : 'From data to agent, in <em>production</em>.';
-        h1.setAttribute('aria-label', next === 'pt' ? 'Do dado ao agente, em produção.' : 'From data to agent, in production.');
-      }
-      document.querySelectorAll<HTMLElement>('.gl').forEach(el => el.dataset.text = el.textContent ?? '');
       document.querySelectorAll<HTMLElement>('[data-language]').forEach(el => el.setAttribute('aria-pressed', String(el.dataset.language === next)));
       document.querySelectorAll<HTMLElement>('[data-count]').forEach(el => {
         el.textContent = formatCount(Number(el.dataset.count), next, { prefix: el.dataset.prefix, suffix: el.dataset.suffix, grouped: !!el.dataset.fmt });
@@ -43,7 +37,7 @@ export function useLanguage(): Language {
       for (const [selector, content] of [
         ['meta[name="description"]', meta.description], ['meta[property="og:title"]', meta.title],
         ['meta[property="og:description"]', meta.og], ['meta[property="og:locale"]', next === 'pt' ? 'pt_BR' : 'en_US'],
-        ['meta[property="og:image:alt"]', next === 'pt' ? 'AL_ Alify Lopes, engenheiro de IA e software' : 'AL_ Alify Lopes, AI and Software Engineer'],
+        ['meta[property="og:image:alt"]', next === 'pt' ? 'AL Alify Lopes, engenheiro de IA e software' : 'AL Alify Lopes, AI and Software Engineer'],
       ]) document.querySelector(selector)?.setAttribute('content', content);
       setLanguage(next); window.dispatchEvent(new Event('portfolio:language-change'));
     };
