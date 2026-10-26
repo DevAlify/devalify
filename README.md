@@ -10,11 +10,12 @@ Site: https://devalify.github.io/devalify/
 
 ## Sobre este repositório
 
-Site estático (HTML, CSS e JavaScript, sem etapa de build obrigatória), em português e inglês. GSAP 3.12.5 vem de CDN com versão exata e SRI; fontes via jsDelivr. O GitHub Pages serve a raiz da `main`.
+Site estático (HTML, CSS e JavaScript, sem etapa de build obrigatória), em português e inglês. GSAP 3.12.5 vem de CDN com versão exata e SRI; fontes (subconjunto latin da Fontsource, OFL) hospedadas em `assets/fonts`. O GitHub Pages serve a raiz da `main`.
 
 ```
 index.html          conteúdo (PT no HTML, EN em atributos data-en)
 src/portfolio.css   estilos e tokens
+src/fonts.css       @font-face das fontes locais
 src/portfolio.js    idioma, animações, terminal (tecla ~)
 assets/             foto recortada (webp e avif), og.png, favicon
 ```

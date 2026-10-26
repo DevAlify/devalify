@@ -21,13 +21,11 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preload" as="image" href="assets/alify.avif" type="image/avif">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/orbitron@5.2.5/index.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/chakra-petch@5.2.5/400.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/chakra-petch@5.2.5/500.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/chakra-petch@5.2.5/600.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/jetbrains-mono@5.2.5/index.css">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/orbitron-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/chakra-petch-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/jetbrains-mono-latin-wght-normal.woff2" crossorigin>
+<link rel="stylesheet" href="src/fonts.css">
 <link rel="stylesheet" href="src/portfolio.css">
 <script>(function(){var r=false;try{r=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}if(!r)document.documentElement.classList.add('anim');})();</script>
 </head>
@@ -393,7 +391,7 @@
   </div>
 </section>
 </main>
-<footer><div class="wrap"><span>Alify Lopes, São Paulo</span><span data-en="Remote, hybrid or on-site">Remoto, híbrido ou presencial</span></div></footer>
+<footer><div class="wrap"><span>Alify Lopes, São Paulo</span><span data-en="Remote, hybrid or on-site">Remoto, híbrido ou presencial</span><button class="tlink" id="tbtn2" type="button" aria-haspopup="dialog">terminal [~]</button></div></footer>
 
 <div id="term" role="dialog" aria-modal="true" aria-label="Mini-terminal" hidden><div class="box"><div class="hud s"><div class="in">
   <div class="top"><span id="tprompt">alify@syphrax:~$ (Esc fecha)</span><button type="button" id="tclose" aria-label="Fechar terminal">x</button></div>
