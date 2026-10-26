@@ -1,17 +1,34 @@
 {
-  "name": "alify-portfolio",
+  "name": "devalify-portfolio",
   "version": "3.0.0",
-  "private": true,
+  "private": "true",
   "description": "Portfólio de Alify Lopes, engenheiro de IA e software",
   "type": "module",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
-    "dev": "node scripts/serve.mjs",
-    "start": "node scripts/serve.mjs",
+    "dev": "next dev",
+    "start": "next start",
     "check": "node --check src/portfolio.js",
-    "build": "node scripts/build.mjs"
+    "build": "next build",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   },
-  "author": "Alify Silva"
+  "author": "Alify Silva",
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "gsap": "^3.15.0",
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.186.1"
+  }
 }
