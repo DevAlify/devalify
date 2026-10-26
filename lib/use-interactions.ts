@@ -20,7 +20,7 @@ export function useInteractions(language: Language): void {
     });
     const panes = Array.from(document.querySelectorAll<HTMLElement>('.pane'));
     let active = panes.find(pane => pane.classList.contains('open')) ?? panes[0];
-    const mobile = matchMedia('(max-width: 900px)');
+    const mobile = matchMedia('(max-width: 899px)');
     const synchronize = () => panes.forEach(el => {
       const expanded = mobile.matches || active === el;
       el.classList.toggle('open', active === el);
