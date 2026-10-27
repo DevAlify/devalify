@@ -37,7 +37,7 @@ export default function Choice() {
         <span data-en="Continue in Editorial">Continuar no Editorial</span><Icon id="arrow-right" />
       </a>
 
-      <a className="choice c-im" id="cIm" href={IMMERSIVE_HREF} data-kind="imersivo" aria-labelledby="tIm" aria-describedby="dIm">
+      <a className="choice c-im" id="cIm" href={IMMERSIVE_HREF} data-kind="imersivo" aria-label="Imersivo" data-en-label="Immersive" aria-describedby="dIm">
         <canvas className="bg" id="grid" aria-hidden="true" />
         <div className="spot" aria-hidden="true" />
         <div className="copy" id="copyIm">
@@ -53,7 +53,7 @@ export default function Choice() {
         </div>
       </a>
 
-      <a className="choice c-ed" id="cEd" href={EDITORIAL_HREF} data-kind="editorial" aria-labelledby="tEd" aria-describedby="dEd">
+      <a className="choice c-ed" id="cEd" href={EDITORIAL_HREF} data-kind="editorial" aria-label="Editorial" aria-describedby="dEd">
         <div className="spot" aria-hidden="true" />
         <svg className="mono" id="mono" viewBox="0 0 280 220" aria-hidden="true">
           <g transform="translate(10 10)"><path className="m2" d="M26 196 L86 26 L146 196 M48 142 H124 M188 26 V196 H262" /></g>

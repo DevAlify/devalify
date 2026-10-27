@@ -120,6 +120,7 @@ ul{list-style:none;padding:0}
   .top{height:56px}
   .who{font-size:13px;max-width:56vw}
   .wa span{display:none}
+  .wa{min-inline-size:28px;justify-content:center} /* icon-only link: keeps the 24 px minimum target (WCAG 2.2) */
   .stage{display:grid;grid-template-rows:1fr 1fr}
   .choice{position:relative;inset:auto;clip-path:none!important;min-height:0}
   .copy{position:absolute;left:var(--pad);right:var(--pad);bottom:26px;width:auto;transform:none!important;opacity:1!important}
@@ -133,7 +134,7 @@ ul{list-style:none;padding:0}
   .mono{top:72px;right:var(--pad);width:36vw}
   .seam,.hint{display:none}
   .stage::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,var(--cy),var(--white),var(--ac));z-index:8;opacity:.7}
-  .continue{bottom:auto;top:50%;translate:0 -50%}
+  .continue{bottom:auto;top:50%;margin-block-start:calc(-.7em - 8px)} /* centered on the divider: half of line height plus padding */
 }
 .reduced .choice{transition:opacity .25s}
 .reduced .stage[data-active=imersivo] .c-ed,.reduced .stage[data-active=editorial] .c-im{opacity:.55}
