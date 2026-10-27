@@ -1,13 +1,14 @@
 import { basePath } from '../../lib/site';
 
-type Layer = { className: string; alt?: string; altEn?: string };
+type PictureProps = { className: string; alt?: string; altEn?: string };
 
 /** The same picture four times: the base, two color channels for the RGB split and a tinted scan layer. */
-function Picture({ className, alt = '', altEn }: Layer) {
-  const base = !alt ? {} : { fetchPriority: 'high' as const };
+function Picture({ className, alt, altEn }: PictureProps) {
+  const decorative = alt === undefined;
   return <picture>
     <source srcSet={`${basePath}/alify-b.avif`} type="image/avif" />
-    <img className={className} src={`${basePath}/alify-b.webp`} width="720" height="900" alt={alt} aria-hidden={alt ? undefined : true} decoding="async" data-en-alt={altEn} {...base} />
+    <img className={className} src={`${basePath}/alify-b.webp`} width="720" height="900" alt={alt ?? ''} aria-hidden={decorative || undefined}
+      decoding="async" fetchPriority={decorative ? undefined : 'high'} data-en-alt={altEn} />
   </picture>;
 }
 

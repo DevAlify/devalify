@@ -3,7 +3,7 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import { Flip } from 'gsap/Flip';
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
 import { SplitText } from 'gsap/SplitText';
-import { isChoice, readChoice, safeStorage, type Choice } from '../../../lib/preferences';
+import { isChoice, readChoice, safeStorage } from '../../../lib/preferences';
 import { motionFlags } from '../../motion/dom';
 import { CHOICE_SCENE, createGridScene } from '../../motion/grid-scene';
 import { paintDither } from '../../motion/dither';
@@ -46,7 +46,7 @@ export function setupChoice(): () => void {
       const kind = link.dataset.kind;
       if (!isChoice(kind) || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
-      leave(kind as Choice, link.href);
+      leave(kind, link.href);
     }, { signal });
     link.addEventListener('keydown', event => { if (event.key === ' ') { event.preventDefault(); link.click(); } }, { signal });
   });
