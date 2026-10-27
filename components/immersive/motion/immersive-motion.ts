@@ -25,6 +25,7 @@ export function setupImmersive(): () => void {
   const stops = [stopScene, setupTooltips(), setupCases({ anim, reduced }), setupMotionToggle(scene)];
   if (anim) stops.push(setupHero({ paused: isMotionPaused }), setupGates(scene?.state), setupReveals(), setupCareer());
   else stops.push(setupStaticReveals(), drawStaticCareer());
+  if (anim) ScrollTrigger.refresh(); // the pinned layout was applied after the scene's triggers were measured
   root.classList.add('motion-ready');
   return () => { stops.forEach(stop => stop()); root.classList.remove('motion-ready'); };
 }

@@ -21,6 +21,8 @@ export function setupGates(state?: SceneState): () => void {
   const media = gsap.matchMedia();
 
   media.add('(min-width: 901px)', () => {
+    const section = must('#numeros');
+    section.classList.add('is-pinned'); // the pinned layout lives in CSS under this class, so a page without scripts keeps the numbers stacked
     const timeline = gsap.timeline({ defaults: { ease: 'none' } });
     gates.forEach((gate, index) => {
       const number = numbers[index];
@@ -38,7 +40,7 @@ export function setupGates(state?: SceneState): () => void {
       onUpdate: self => { if (state) state.boost = self.isActive ? 1.4 + Math.min(Math.abs(self.getVelocity()) / 1800, 2) : 0; },
       onToggle: self => { if (state && !self.isActive) state.boost = 0; },
     });
-    return () => { gsap.set(gates, { clearProps: 'all' }); numbers.forEach(number => show(number, Number(number.dataset.count))); };
+    return () => { section.classList.remove('is-pinned'); gsap.set(gates, { clearProps: 'all' }); numbers.forEach(number => show(number, Number(number.dataset.count))); };
   });
 
   media.add('(max-width: 900px)', () => {

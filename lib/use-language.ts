@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import { formatCount, readLanguage, resolveLanguage, storeLanguage, type Language } from './locale';
-import type { PageTexts } from './page-texts';
+import { EDITORIAL_TEXTS, type PageTexts } from './page-texts';
 
 /** Attributes translated through a data-en-* companion, next to the data-en element content. */
 const ATTRIBUTES = { 'aria-label': 'data-en-label', alt: 'data-en-alt', placeholder: 'data-en-placeholder' } as const;
 const OG_IMAGE_ALT = { pt: 'AL Alify Lopes, engenheiro de IA e software', en: 'AL Alify Lopes, AI and Software Engineer' };
 
-export function useLanguage(texts: PageTexts): Language {
+/** Swaps the page language. Without argument it serves the Editorial route, whose title and descriptions are the defaults. */
+export function useLanguage(texts: PageTexts = EDITORIAL_TEXTS): Language {
   const [language, setLanguage] = useState<Language>('pt');
   useEffect(() => {
     const originals = new Map<Element, string>();

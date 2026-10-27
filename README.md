@@ -32,7 +32,8 @@ node lib/preview.mjs # http://127.0.0.1:4173/devalify/
 ```
 
 Next.js 16, App Router, TypeScript e GSAP via npm (ScrollTrigger, SplitText, ScrambleText, DrawSVG e Flip).
-Todas as fontes usam `next/font/local` a partir de `public/fonts`; não há CDN nem download durante o build.
+Todas as fontes usam `next/font/local` a partir de `app/fonts` (fora de `public`, para não irem ao site duas vezes);
+não há CDN nem download durante o build.
 O workflow Pages publica `out/` em pushes para `main`.
 
 ## Estrutura
@@ -48,7 +49,8 @@ O workflow Pages publica `out/` em pushes para `main`.
 - `lib/`: lógica pura com testes (`preferences`, `seam`, `terminal-commands`, `head-script`, `feature-support`, `locale`),
   hook de idioma e metadados por rota.
 - `styles/`: `tokens-neon.css` (paleta compartilhada), `choice.css`, `immersive.css`, e o CSS da direção Editorial.
-- `public/`: foto alify-b (AVIF e WebP), fontes woff2, Open Graph e favicon. O fonte do Open Graph fica em `lib/og-source.html`.
+- `app/fonts/`: as fontes woff2 (Anybody, Hubot Sans, Bricolage Grotesque e JetBrains Mono).
+- `public/`: foto alify-b (AVIF e WebP), Open Graph e favicon. O fonte do Open Graph fica em `lib/og-source.html`.
 
 ## Fidelidade e movimento
 

@@ -115,14 +115,15 @@ h2{font:300 clamp(1.9rem,3.5vw,3.3rem)/1.08 var(--disp);font-stretch:122%;letter
 .gnum{display:block;font:200 clamp(4.4rem,16vw,9rem)/.9 var(--disp);font-stretch:112%;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
 .gcap{margin-top:12px;font:500 clamp(1.05rem,1.8vw,1.4rem)/1.35 var(--sans);max-width:30ch}
 .gsub{margin-top:8px;color:var(--mute);max-width:46ch;font-size:.95rem}
+/* Pinned layout: the script adds .is-pinned right before it creates the pin. Without scripts the numbers stay stacked and readable. */
 @media(min-width:901px){
-  .anim .gates .stage{height:100svh;min-height:0;overflow:hidden;padding:0}
-  .anim .gates h2{position:absolute;left:var(--gut);top:100px;margin:0;z-index:3}
-  .anim .gate-list{position:absolute;inset:0}
-  .anim .gate{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;text-align:center;padding:0 var(--gut);border:0;will-change:transform,opacity,filter}
-  .anim .gnum{font-size:clamp(7rem,21vw,17rem);font-stretch:108%}
-  .anim .gcap{font-size:clamp(1.2rem,2vw,1.7rem);max-width:34ch}
-  .anim .gsub{font-size:1.02rem}
+  .is-pinned .stage{height:100svh;min-height:0;overflow:hidden;padding:0}
+  .is-pinned h2{position:absolute;left:var(--gut);top:100px;margin:0;z-index:3}
+  .is-pinned .gate-list{position:absolute;inset:0}
+  .is-pinned .gate{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;text-align:center;padding:0 var(--gut);border:0;will-change:transform,opacity,filter}
+  .is-pinned .gnum{font-size:clamp(7rem,21vw,17rem);font-stretch:108%}
+  .is-pinned .gcap{font-size:clamp(1.2rem,2vw,1.7rem);max-width:34ch}
+  .is-pinned .gsub{font-size:1.02rem}
 }
 
 /* ---------- cases: rows that open ---------- */
@@ -265,11 +266,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 /* ---------- before hydration: the entrance starts from these states, so nothing flashes ---------- */
 .anim .rv{opacity:0;transform:translateY(28px)}
 .anim .hero-copy .sub,.anim .hero-copy .cta,.anim .dec,.anim .portrait .stack,.anim .portrait .glow,.anim .brk path,.anim .sk-item,.anim .gate{opacity:0}
-/* If scripts never take over, everything is revealed after 4 s and the arrival cover goes away. */
+/* If scripts never take over, everything is revealed after 4 s and the arrival cover goes away. That covers every
+   state hidden by CSS alone: the entrance states above, the blocks that wait for the observer with reduced motion,
+   and the collapsed case rows (their buttons need scripts, so without them the rows open). */
 .anim:not(.motion-ready) :is(.rv,.hero-copy .sub,.hero-copy .cta,.dec,.portrait .stack,.portrait .glow,.brk path,.sk-item,.gate){animation:unveil .2s ease-out 4s forwards}
+.reduced:not(.motion-ready) .rv{animation:unveil .2s ease-out 4s forwards}
+.js:not(.motion-ready) .case-panel{animation:open-panel .2s ease-out 4s forwards}
 html.arrive:not(.motion-ready)::after{animation:unveil-out .3s ease-out 4s forwards}
 @keyframes unveil{to{opacity:1;transform:none}}
 @keyframes unveil-out{to{opacity:0}}
+@keyframes open-panel{to{grid-template-rows:1fr;visibility:visible}}
 
 /* ---------- paused motion (button, remembered): continuous animations stop ---------- */
 html.motion-paused .logo i,html.motion-paused .portrait .scan,html.motion-paused .portrait .line,html.motion-paused .avail::before{animation:none}
