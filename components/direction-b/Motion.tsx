@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { formatCount } from '../../lib/locale';
 import { motionPolicy } from '../../lib/motion-policy';
+import { EDITORIAL_TEXTS } from '../../lib/page-texts';
 import { useLanguage } from '../../lib/use-language';
 
 type Policy = ReturnType<typeof motionPolicy>;
@@ -107,7 +108,7 @@ function setupMotion(policy: Policy) {
 }
 
 export default function Motion() {
-  useLanguage();
+  useLanguage(EDITORIAL_TEXTS);
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const media = gsap.matchMedia();

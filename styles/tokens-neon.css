@@ -1,0 +1,43 @@
+/* Design tokens shared by the selection page and the immersive direction.
+   Colors with alpha are written as rgb(var(--x-rgb) / alpha) so no color literal lives outside this file. */
+:root {
+  --bg: #03050b; --bg-rgb: 3 5 11;
+  --ink: #e9f1ff; --ink-rgb: 233 241 255;
+  --mute: #93a4bd;
+  --faint: #7387a3;
+  --ink-soft: #cfdcf0;
+  --term-ink: #cfe0f6;
+  --line-rgb: 160 205 255;
+  --line: rgb(var(--line-rgb) / .16);
+  --line-soft: rgb(var(--line-rgb) / .08);
+
+  --cy: #19f0ff; --cy-rgb: 25 240 255; --cy-ink: #001a1f; --cy-glow-rgb: 190 252 255;
+  --mag: #ff2bd6; --mag-rgb: 255 43 214;
+
+  --ac: #ff5b3a; --ac-rgb: 255 91 58; --ac-ink: #1a0a05;
+  --ed-bg: #0f0f11;
+  --ed-ink: #f0eee8;
+  --ed-mute: #a29f98;
+  --ed-soft: #d6d3cc;
+
+  --seam-mid: #eaf6ff;
+  --scroll: #1c4452;
+  --tip-bg: #060b16;
+  --term-bg: #050713;
+  --term-err: #ffb07a;
+  --white: #fff;
+  --black: #000;
+
+  --im-bg: var(--bg);
+  --im-ink: var(--ink);
+  --im-mute: var(--mute);
+
+  --out: cubic-bezier(.16, 1, .3, 1);
+  --io: cubic-bezier(.65, 0, .35, 1);
+
+  /* The next/font variables are defined on <html> by each layout. */
+  --anybody: var(--font-anybody), var(--font-hubot), system-ui, sans-serif;
+  --disp: var(--anybody);
+  --sans: var(--font-hubot), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}

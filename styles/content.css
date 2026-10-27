@@ -87,6 +87,7 @@ dd { margin: 0; }
 @media (max-width:640px) {
   nav { gap: var(--space-xs); }
   .desktop-label { display: none; }
+  nav a.switch { display: inline-block; }
   nav a.mail { margin-left: var(--space-xs); padding: var(--space-sm) var(--space-md); }
   .lang { flex-wrap: wrap; }
 }

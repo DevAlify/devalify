@@ -4,9 +4,8 @@ import Inventory from '../content/Inventory';
 import Education from '../content/Education';
 import DirectionSections from './Sections';
 import Motion from './Motion';
-import nextConfig from '../../next.config';
-
-const basePath = nextConfig.basePath ?? '';
+import RememberChoice from '../ui/RememberChoice';
+import { ROUTES, basePath, href } from '../../lib/site';
 
 export default function Portfolio() {
   return <>
@@ -17,6 +16,7 @@ export default function Portfolio() {
       <nav aria-label="Principal" data-en-label="Main">
         <a href="#pilares" data-en="Pillars">Pilares</a><a href="#cases">Cases</a>
         <a href="#trajetoria" data-en="Career">Trajetória</a>
+        <a className="switch" href={href(ROUTES.choice)} aria-label="Trocar experiência" data-en-label="Switch experience"><span data-en="Switch">Trocar</span><span className="desktop-label" data-en=" experience"> experiência</span></a>
         <span className="language" role="group" aria-label="Idioma" data-en-label="Language">
           <button type="button" data-language="pt" aria-pressed="true" lang="pt">PT</button>
           <button type="button" data-language="en" aria-pressed="false" lang="en">EN</button>
@@ -58,5 +58,6 @@ export default function Portfolio() {
     </main>
     <footer><div className="wrap"><span>Alify Lopes, São Paulo</span><span data-en="Remote, hybrid or on-site">Remoto, híbrido ou presencial</span></div></footer>
     <Motion />
+    <RememberChoice kind="editorial" />
   </>;
 }
