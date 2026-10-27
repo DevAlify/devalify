@@ -1,0 +1,163 @@
+
+/* Selection page. Two halves announce each experience:
+   Immersive (blue-black, one cyan, perspective grid, text that decodes) and
+   Editorial (warm graphite, vermilion, large Bricolage, monogram in strokes).
+   The seam is slanted and follows the pointer: the chosen half grows, the other recedes. */
+:root { --pad: clamp(24px, 5vw, 80px); }
+/* Bricolage is loaded by the page tree, so its stack is composed on the element that defines the font variable. */
+.choice-page { --brico: var(--font-bricolage), system-ui, sans-serif; }
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+html,body{height:100%;background:var(--bg);color:var(--im-ink);overflow:hidden}
+body{font:400 17px/1.55 var(--sans);word-spacing:.04em;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none;touch-action:manipulation}
+button{touch-action:manipulation;font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+ul{list-style:none;padding:0}
+.ico{width:1.15em;height:1.15em;fill:currentColor;flex:none}
+:focus-visible{outline:2px solid var(--cy);outline-offset:4px}
+.skip{position:fixed;left:16px;top:-80px;z-index:200;background:var(--cy);color:var(--cy-ink);padding:10px 16px;font-weight:600}
+.skip:focus{top:16px}
+
+/* ---------- discreet top bar ---------- */
+.top{position:fixed;inset:0 0 auto 0;z-index:30;height:calc(68px + env(safe-area-inset-top,0px));padding:env(safe-area-inset-top,0px) max(var(--pad),env(safe-area-inset-right,0px)) 0 max(var(--pad),env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:16px;pointer-events:none}
+.top>*{pointer-events:auto}
+.who{font:500 14px var(--sans);letter-spacing:.02em;color:rgb(var(--ink-rgb) / .86);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tools{display:flex;align-items:center;gap:18px}
+.wa{display:inline-flex;align-items:center;gap:9px;font:500 14px var(--sans);color:rgb(var(--ink-rgb) / .86);padding:8px 0;border-bottom:1px solid rgb(var(--ink-rgb) / .28);transition:color .3s,border-color .3s}
+.wa:hover{color:var(--white);border-color:var(--white)}
+.lang{display:inline-flex;font:500 12px var(--mono)}
+.lang button{padding:7px 9px;color:rgb(var(--ink-rgb) / .62);transition:color .25s}
+.lang button[aria-pressed=true]{color:var(--white);box-shadow:inset 0 -1px 0 var(--white)}
+.lang button:hover{color:var(--white)}
+
+/* ---------- stage: two halves with a slanted seam ---------- */
+.stage{position:fixed;inset:0;--x:50;--k:3.4vw;--mx:-999;--my:-999;--seam:var(--cy);overflow:hidden}
+.stage[data-active=editorial]{--seam:var(--ac)}
+.choice{position:absolute;inset:0;display:block;isolation:isolate;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none}
+.c-im{z-index:1;background:var(--im-bg);color:var(--im-ink);clip-path:polygon(0 0,calc(var(--x)*1% + var(--k)) 0,calc(var(--x)*1% - var(--k)) 100%,0 100%)}
+.c-ed{z-index:2;background:var(--ed-bg);color:var(--ed-ink);clip-path:polygon(calc(var(--x)*1% + var(--k)) 0,100% 0,100% 100%,calc(var(--x)*1% - var(--k)) 100%)}
+.bg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.spot{position:absolute;inset:0;pointer-events:none;opacity:.8;transition:opacity .6s}
+.c-im .spot{background:radial-gradient(520px circle at calc(var(--mx)*1px) calc(var(--my)*1px),rgb(var(--cy-rgb) / .17),transparent 62%)}
+.c-ed .spot{background:radial-gradient(520px circle at calc(var(--mx)*1px) calc(var(--my)*1px),rgb(var(--ac-rgb) / .15),transparent 62%)}
+.c-im::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(120% 90% at 40% 55%,transparent 40%,rgb(var(--bg-rgb) / .7) 100%)}
+.stage[data-active=imersivo] .c-im .spot,.stage[data-active=editorial] .c-ed .spot{opacity:1}
+.stage[data-active=imersivo] .c-ed .spot,.stage[data-active=editorial] .c-im .spot{opacity:.25}
+.dither{position:absolute;inset:0;z-index:6;pointer-events:none;opacity:.05;background-size:128px 128px}
+
+/* editorial monogram */
+.mono{position:absolute;right:calc(var(--pad) - 1vw);top:9vh;width:clamp(220px,27vw,460px);height:auto;overflow:visible;pointer-events:none;transition:opacity .8s var(--out)}
+.stage[data-active=imersivo] .mono{opacity:.35}
+.mono path{fill:none;stroke-linecap:square;stroke-linejoin:miter}
+.mono .m1{stroke:var(--ac);stroke-width:14}
+.mono .m2{stroke:var(--ed-ink);stroke-width:1.2;opacity:.45}
+.c-ed::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(90% 70% at 70% 30%,rgb(var(--ac-rgb) / .07),transparent 60%)}
+
+/* ---------- copy of each half ---------- */
+.copy{position:absolute;bottom:clamp(64px,12vh,132px);width:min(40vw,620px);will-change:transform,opacity;z-index:3}
+.c-im .copy{left:var(--pad);transform-origin:0% 100%}
+.c-ed .copy{right:var(--pad);transform-origin:100% 100%}
+.t{display:block;white-space:nowrap}
+.t.im{font:300 clamp(2.6rem,6.2vw,6.4rem)/1 var(--anybody);font-stretch:128%;letter-spacing:-.02em;color:var(--im-ink)}
+.t.ed{font:800 clamp(3rem,7.6vw,8rem)/.86 var(--brico);letter-spacing:-.06em;color:var(--ed-ink);padding-bottom:.08em}
+.t .ch{display:inline-block}
+.rule{display:block;height:1px;width:clamp(72px,9vw,140px);margin:22px 0 20px;transform-origin:0 50%}
+.c-im .rule{background:var(--cy)} .c-ed .rule{background:var(--ac)}
+.d{max-width:38ch;font-size:clamp(1rem,1.2vw,1.12rem)}
+.c-im .d{color:var(--im-mute)} .c-ed .d{color:var(--ed-mute)}
+.perks{margin-top:20px;display:grid;gap:7px;font:500 12.5px/1.4 var(--mono);max-height:0;opacity:0;overflow:hidden;transition:max-height .8s var(--out),opacity .5s var(--out) .08s}
+.perks li{position:relative;padding-left:20px}
+.perks li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:1px}
+.c-im .perks{color:var(--ink-soft)} .c-im .perks li::before{background:var(--cy)}
+.c-ed .perks{color:var(--ed-soft)} .c-ed .perks li::before{background:var(--ac)}
+.choice.is-on .perks{max-height:130px;opacity:1}
+.go{display:inline-flex;align-items:center;gap:12px;margin-top:26px;min-height:46px;padding:0 20px;font:600 14px/1 var(--sans);letter-spacing:.02em;transition:background .35s var(--out),color .35s var(--out),transform .5s var(--out),box-shadow .35s}
+.go .ico{transition:transform .5s var(--out)}
+.c-im .go{color:var(--cy);box-shadow:inset 0 0 0 1px rgb(var(--cy-rgb) / .55);clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)}
+.c-ed .go{background:var(--ed-ink);color:var(--ed-bg)}
+.choice:hover .go,.choice.is-on .go{transform:translateX(4px)}
+.c-im.is-on .go{background:var(--cy);color:var(--cy-ink)}
+.c-ed.is-on .go{background:var(--ac);color:var(--ac-ink)}
+.choice.is-on .go .ico{transform:translateX(4px)}
+.choice:focus-visible::after{content:"";position:absolute;inset:12px;border:2px solid var(--cy);pointer-events:none;z-index:7}
+.c-ed:focus-visible::after{border-color:var(--ac);background:none}
+.choice:focus-visible .go{outline:2px solid var(--white);outline-offset:3px}
+
+/* seam */
+.seam{position:absolute;inset:0;width:100%;height:100%;z-index:8;pointer-events:none;overflow:visible;filter:drop-shadow(0 0 9px color-mix(in srgb,var(--seam) 70%,transparent))}
+.seam line{stroke:url(#sg);stroke-width:1.5}
+.hint{position:absolute;left:50%;transform:translateX(-50%);bottom:max(18px,env(safe-area-inset-bottom,0px));z-index:9;padding:8px 20px;white-space:nowrap;text-align:center;font:500 12px var(--mono);letter-spacing:.04em;color:rgb(var(--ink-rgb) / .78);background:rgb(var(--bg-rgb) / .74);pointer-events:none}
+
+/* shortcut to the last experience (only shown when one is remembered) */
+.continue{position:absolute;inset-inline:0;margin-inline:auto;width:fit-content;bottom:calc(max(18px,env(safe-area-inset-bottom,0px)) + 44px);z-index:9;display:inline-flex;align-items:center;gap:10px;padding:8px 18px;white-space:nowrap;font:500 12px/1.4 var(--mono);letter-spacing:.04em;color:var(--ink);background:rgb(var(--bg-rgb) / .74);box-shadow:inset 0 0 0 1px rgb(var(--ink-rgb) / .28);transition:background .35s var(--out),color .35s var(--out),box-shadow .35s}
+.continue .ico{color:var(--cy);transition:transform .5s var(--out)}
+.continue:hover .ico{transform:translateX(3px)}
+.continue.r-im:hover{background:var(--cy);color:var(--cy-ink);box-shadow:none}
+.continue.r-ed .ico{color:var(--ac)}
+.continue.r-ed:hover{background:var(--ac);color:var(--ac-ink);box-shadow:none}
+.continue:hover .ico{color:inherit}
+.continue:focus-visible{outline-color:var(--white)}
+/* Side by side, the bottom band belongs to the two buttons, so the shortcut sits just under the header. */
+@media(min-width:761px){.continue{bottom:auto;top:calc(68px + env(safe-area-inset-top,0px) + 12px)}}
+
+/* exit */
+.veil{position:fixed;inset:0;z-index:100;pointer-events:none;visibility:hidden}
+.veil.on{visibility:visible;pointer-events:auto}
+.v-bg{position:absolute;inset:0;opacity:0}
+.veil[data-kind=imersivo] .v-bg{background:var(--im-bg)} .veil[data-kind=editorial] .v-bg{background:var(--ed-bg)}
+.v-line{z-index:1;position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:linear-gradient(90deg,transparent,var(--cy) 20%,var(--white) 50%,var(--cy) 80%,transparent);box-shadow:0 0 24px 4px rgb(var(--cy-rgb) / .55);transform:scaleX(0);opacity:0}
+.v-cur{position:absolute;inset:0;background:var(--ac)}
+.v-cur2{position:absolute;inset:0;background:var(--ed-bg)}
+.v-title{position:absolute;inset:0;display:grid;place-items:center;z-index:2}
+
+/* ---------- before hydration: the entrance starts from these states, so nothing flashes ---------- */
+.anim .copy,.anim .t,.anim .d,.anim .rule,.anim .go,.anim .hint,.anim .mono .m1,.anim .mono .m2{opacity:0}
+/* If scripts never take over, everything is revealed after 4 s. */
+.anim:not(.motion-ready) :is(.copy,.t,.d,.rule,.go,.hint,.mono .m1,.mono .m2){animation:unveil .2s ease-out 4s forwards}
+.anim:not(.motion-ready) .mono .m2{--unveil-opacity:.45}
+@keyframes unveil{to{opacity:var(--unveil-opacity,1)}}
+
+/* ---------- mobile: the two halves stacked ---------- */
+@media(max-width:760px){
+  .top{height:56px}
+  .who{font-size:13px;max-width:56vw}
+  .wa span{display:none}
+  .wa{min-inline-size:28px;justify-content:center} /* icon-only link: keeps the 24 px minimum target (WCAG 2.2) */
+  .stage{display:grid;grid-template-rows:1fr 1fr}
+  .choice{position:relative;inset:auto;clip-path:none!important;min-height:0}
+  .copy{position:absolute;left:var(--pad);right:var(--pad);bottom:26px;width:auto;transform:none!important;opacity:1!important}
+  .c-ed .copy{right:var(--pad)}
+  .t.im{font-size:clamp(2.4rem,11vw,3.4rem)}
+  .t.ed{font-size:clamp(2.8rem,13vw,4rem)}
+  .rule{margin:14px 0 12px}
+  .d{font-size:.98rem;max-width:34ch}
+  .perks{display:none}
+  .go{margin-top:16px;min-height:42px}
+  .mono{top:72px;right:var(--pad);width:36vw}
+  .seam,.hint{display:none}
+  .stage::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,var(--cy),var(--white),var(--ac));z-index:8;opacity:.7}
+  .continue{bottom:auto;top:50%;margin-block-start:calc(-.7em - 8px)} /* centered on the divider: half of line height plus padding */
+}
+
+/* ---------- short screens (landscape phones): tighter copy, so every title and button stays on screen ---------- */
+@media(max-height:480px){
+  .t.im{font-size:min(clamp(2.6rem,6.2vw,6.4rem),11vh)}
+  .t.ed{font-size:min(clamp(3rem,7.6vw,8rem),13vh)}
+  .rule{margin:12px 0 10px}
+  .d{font-size:.9rem}
+  .perks{display:none}
+  .go{margin-top:14px;min-height:40px}
+}
+/* Stacked halves are about 180 px tall here: the description (still read through aria-describedby) gives way. */
+@media(max-width:760px) and (max-height:480px){
+  .copy{bottom:20px}
+  .t.im{font-size:min(2.2rem,9vh)}
+  .t.ed{font-size:min(2.6rem,10vh)}
+  .rule{margin:6px 0}
+  .d{display:none}
+  .go{margin-top:8px;min-height:32px;padding:0 14px;font-size:13px}
+}
+.reduced .choice{transition:opacity .25s}
+.reduced .stage[data-active=imersivo] .c-ed,.reduced .stage[data-active=editorial] .c-im{opacity:.55}
+.reduced .perks,.reduced .go,.reduced .go .ico,.reduced .spot{transition:opacity .25s,background .25s,color .25s}
+@media(prefers-reduced-motion:reduce){.perks{transition:opacity .25s}}

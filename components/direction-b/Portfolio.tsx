@@ -17,6 +17,7 @@ export default function Portfolio() {
       <nav aria-label="Principal" data-en-label="Main">
         <a href="#pilares" data-en="Pillars">Pilares</a><a href="#cases">Cases</a>
         <a href="#trajetoria" data-en="Career">Trajetória</a>
+        <a className="switch" href={`${basePath}/`} aria-label="Trocar experiência" data-en-label="Switch experience"><span data-en="Switch">Trocar</span><span className="desktop-label" data-en=" experience"> experiência</span></a>
         <span className="language" role="group" aria-label="Idioma" data-en-label="Language">
           <button type="button" data-language="pt" aria-pressed="true" lang="pt">PT</button>
           <button type="button" data-language="en" aria-pressed="false" lang="en">EN</button>
