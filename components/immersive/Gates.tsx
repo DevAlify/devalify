@@ -7,11 +7,16 @@ export default function Gates() {
       <div className="wrap">
         <h2 id="h-num" className="dec-h" data-en="Numbers from real work">Números do trabalho real</h2>
         <ol className="gate-list" id="gateList">
-          {GATES.map(gate => <li className="gate" key={gate.shown}>
-            <b className="gnum" data-count={gate.count} data-prefix={gate.prefix} data-suffix={gate.suffix} data-fmt={gate.grouped ? '1' : undefined}>{gate.shown}</b>
-            <p className="gcap" {...tx(gate.caption)}>{gate.caption.pt}</p>
-            <p className="gsub" {...tx(gate.sub)}>{gate.sub.pt}</p>
-          </li>)}
+          {GATES.map(gate => {
+            const count = { 'data-count': gate.count, 'data-prefix': gate.prefix, 'data-suffix': gate.suffix, 'data-fmt': gate.grouped ? '1' : undefined };
+            // The big number counts up on screen, so it is hidden from assistive technology, which reads the final value instead.
+            return <li className="gate" key={gate.shown}>
+              <b className="gnum" aria-hidden="true" {...count}>{gate.shown}</b>
+              <span className="sr" {...count}>{gate.shown}</span>
+              <p className="gcap" {...tx(gate.caption)}>{gate.caption.pt}</p>
+              <p className="gsub" {...tx(gate.sub)}>{gate.sub.pt}</p>
+            </li>;
+          })}
         </ol>
       </div>
     </div>

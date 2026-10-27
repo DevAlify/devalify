@@ -9,10 +9,8 @@ export const EDITORIAL_TEXTS: PageTexts = {
   en: { title: 'Alify Lopes | AI and Software Engineer', description: 'Alify Lopes, AI and software engineer in São Paulo, Brazil. Agents with LLMs, RAG and MCP, backend and tested interfaces, with a production background.', og: 'Agents with LLMs, RAG and MCP, backend and tested interfaces, with a production background.' },
 };
 
-export const CHOICE_TEXTS: PageTexts = {
-  pt: { title: 'Alify Lopes | Escolha como ver o portfólio', description: 'Alify Lopes, engenheiro de IA e software em São Paulo. Escolha entre a versão imersiva e a editorial do portfólio.', og: 'Escolha entre a versão imersiva e a editorial do portfólio.' },
-  en: { title: 'Alify Lopes | Choose how to view the portfolio', description: 'Alify Lopes, AI and software engineer in São Paulo, Brazil. Choose between the immersive and the editorial version of the portfolio.', og: 'Choose between the immersive and the editorial version of the portfolio.' },
-};
+/** The root URL is the one on resumes and LinkedIn, so its title and previews stay the professional ones. */
+export const CHOICE_TEXTS: PageTexts = EDITORIAL_TEXTS;
 
 export const IMMERSIVE_TEXTS: PageTexts = {
   pt: { title: 'Alify Lopes | Imersivo', description: 'Alify Lopes, engenheiro de IA e software em São Paulo. Versão imersiva do portfólio: agentes com LLMs, RAG e MCP, backend e interfaces com testes.', og: 'Versão imersiva do portfólio: agentes com LLMs, RAG e MCP, backend e interfaces com testes.' },

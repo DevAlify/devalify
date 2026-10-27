@@ -3,7 +3,7 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import { Flip } from 'gsap/Flip';
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
 import { SplitText } from 'gsap/SplitText';
-import { isChoice, readChoice, safeStorage } from '../../../lib/preferences';
+import { isChoice, readChoice, readMotionPaused, safeStorage } from '../../../lib/preferences';
 import { motionFlags } from '../../motion/dom';
 import { CHOICE_SCENE, createGridScene } from '../../motion/grid-scene';
 import { paintDither } from '../../motion/dither';
@@ -22,7 +22,8 @@ export function setupChoice(): () => void {
   const { signal } = abort;
   paintDither(els.dither);
 
-  const grid = createGridScene(els.canvas, CHOICE_SCENE, { reduced, paused: false });
+  // "Pause motion" is chosen on the Immersive page (WCAG 2.2.2); here it keeps the grid and scanlines on one still frame.
+  const grid = createGridScene(els.canvas, CHOICE_SCENE, { reduced, paused: readMotionPaused(safeStorage()) });
   if (grid) grid.state.boost = 0.8;
   const stage = createStage(els, { anim, reduced, grid });
   const leave = createExit(els, stage, { anim, grid });

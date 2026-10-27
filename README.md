@@ -15,8 +15,9 @@ Portfólio PT/EN de Alify Lopes, engenheiro de IA e software em São Paulo.
 | `/editorial/` | Direção Editorial (a direção B aprovada, sem mudança visual). |
 
 As duas direções têm o link discreto "Trocar experiência" na navegação, que volta a `/`. A última experiência
-visitada fica no `localStorage`: ao voltar, `/` pré-destaca essa opção e mostra o atalho "Continuar no ...".
-Nada redireciona sozinho.
+visitada fica no `localStorage`: ao voltar, `/` pré-destaca essa opção e mostra o atalho "Continuar no ...",
+sob o cabeçalho no desktop (a faixa de baixo é dos dois botões). Nada redireciona sozinho. O título e as prévias
+(og e twitter) de `/` são os profissionais, os mesmos da raiz antiga, porque essa é a URL dos currículos.
 
 ## Desenvolvimento
 
@@ -62,7 +63,12 @@ trocadas por tokens, e as animações são as mesmas (GSAP 3.15).
   iniciais, então não há flash. Se os scripts não chegam, tudo aparece depois de 4 s.
 - `prefers-reduced-motion`: sem animação, só fades curtos; a grade vira um quadro parado e o botão de pausa some.
 - Botão "pausar movimento" (WCAG 2.2.2): congela a grade e as animações contínuas, e a escolha fica lembrada.
-- A grade em canvas pausa fora da viewport, com a aba oculta e com o movimento pausado.
+- A grade em canvas pausa fora da viewport, com a aba oculta e com o movimento pausado. A página de escolha
+  também respeita essa preferência (grade e linhas de varredura num quadro parado).
+- Telas baixas (`max-height: 480px`, celular deitado): textos mais compactos, sem a lista de detalhes; em até
+  760 px de largura a descrição some (continua lida pelo `aria-describedby`).
+- Números do Imersivo no desktop: o texto do contador é sempre recalculado do estado da animação depois de cada
+  `ScrollTrigger.refresh()`; o número animado fica oculto para leitor de tela, que lê o valor final.
 - O retrato usa RGB split por filtros SVG; sem suporte (testado por recurso, não por user agent) cai num
   `drop-shadow` simples.
 - Idioma: o servidor renderiza PT e `lib/use-language.ts` troca para EN com `data-en`. O idioma vale nas três rotas.

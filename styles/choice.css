@@ -97,6 +97,8 @@ ul{list-style:none;padding:0}
 .continue.r-ed:hover{background:var(--ac);color:var(--ac-ink);box-shadow:none}
 .continue:hover .ico{color:inherit}
 .continue:focus-visible{outline-color:var(--white)}
+/* Side by side, the bottom band belongs to the two buttons, so the shortcut sits just under the header. */
+@media(min-width:761px){.continue{bottom:auto;top:calc(68px + env(safe-area-inset-top,0px) + 12px)}}
 
 /* exit */
 .veil{position:fixed;inset:0;z-index:100;pointer-events:none;visibility:hidden}
@@ -135,6 +137,25 @@ ul{list-style:none;padding:0}
   .seam,.hint{display:none}
   .stage::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,var(--cy),var(--white),var(--ac));z-index:8;opacity:.7}
   .continue{bottom:auto;top:50%;margin-block-start:calc(-.7em - 8px)} /* centered on the divider: half of line height plus padding */
+}
+
+/* ---------- short screens (landscape phones): tighter copy, so every title and button stays on screen ---------- */
+@media(max-height:480px){
+  .t.im{font-size:min(clamp(2.6rem,6.2vw,6.4rem),11vh)}
+  .t.ed{font-size:min(clamp(3rem,7.6vw,8rem),13vh)}
+  .rule{margin:12px 0 10px}
+  .d{font-size:.9rem}
+  .perks{display:none}
+  .go{margin-top:14px;min-height:40px}
+}
+/* Stacked halves are about 180 px tall here: the description (still read through aria-describedby) gives way. */
+@media(max-width:760px) and (max-height:480px){
+  .copy{bottom:20px}
+  .t.im{font-size:min(2.2rem,9vh)}
+  .t.ed{font-size:min(2.6rem,10vh)}
+  .rule{margin:6px 0}
+  .d{display:none}
+  .go{margin-top:8px;min-height:32px;padding:0 14px;font-size:13px}
 }
 .reduced .choice{transition:opacity .25s}
 .reduced .stage[data-active=imersivo] .c-ed,.reduced .stage[data-active=editorial] .c-im{opacity:.55}
