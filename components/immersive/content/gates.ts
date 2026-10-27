@@ -1,4 +1,4 @@
-import { bi, type Bi } from './bi';
+import { bi, type Bi } from './bi.ts';
 
 export type Gate = { count: number; prefix?: string; suffix?: string; grouped?: boolean; shown: string; caption: Bi; sub: Bi };
 

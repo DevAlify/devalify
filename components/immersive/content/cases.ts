@@ -1,4 +1,4 @@
-import { bi, same, type Bi } from './bi';
+import { bi, same, type Bi } from './bi.ts';
 
 export type Fact = { value: Bi; label: Bi };
 export type Point = { label: Bi; text: Bi };

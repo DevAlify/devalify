@@ -1,4 +1,4 @@
-import { bi, same, type Bi } from './bi';
+import { bi, same, type Bi } from './bi.ts';
 
 export type Job = { period: Bi; role: Bi; org: Bi; summary: Bi; highlights: Bi[] };
 

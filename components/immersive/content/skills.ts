@@ -1,4 +1,4 @@
-import { bi, same, type Bi } from './bi';
+import { bi, same, type Bi } from './bi.ts';
 
 export type Skill = { label: Bi; tip?: Bi };
 export type SkillGroup = { id: string; name: Bi; items: Skill[] };

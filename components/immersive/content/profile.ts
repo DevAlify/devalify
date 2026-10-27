@@ -1,4 +1,4 @@
-import { bi, type Bi } from './bi';
+import { bi, type Bi } from './bi.ts';
 
 export type Course = { title: Bi; detail: Bi };
 
